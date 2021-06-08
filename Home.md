@@ -1,6 +1,6 @@
-# AIT
+# Grupo 3 - Family Finance Application
 
-Esta wiki é o Software Architecture Document (SAD)/Documento de Arquitetura de Software (DAS) da aplicação solicitada pela Autoridade Intermunicipal de Transportes (AIT), e desenvolvida no contexto do 5º semestre da LEI em 2020-2021 com o apoio da empresa [OPT – Optimização e Planeamento de Transportes, S.A.](http://opt.pt/)
+Esta wiki é o Software Architecture Document (SAD)/Documento de Arquitetura de Software (DAS) da aplicação solicitada pelo SWitCH, e desenvolvida no contexto do 2º semestre de DSOFT2 em 2020-2021 com o apoio da documentação.
 
 Este DAS é constituído por:
 
