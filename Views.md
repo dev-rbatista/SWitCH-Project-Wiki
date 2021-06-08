@@ -167,13 +167,16 @@ TBD
 
 ## Nível 3 (Back-end)
 ### Vista Lógica
-TBD
+
+Class Diagram
 
 ### Vista de Processos
 TBD
 
 ### Vista de Implementação
-TBD
+
+Sequence diagram
+ 
 
 ### Vista Física
 TBD
