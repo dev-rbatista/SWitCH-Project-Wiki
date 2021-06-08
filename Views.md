@@ -168,6 +168,15 @@ TBD
 ## Nível 3 (Back-end)
 ### Vista Lógica
 
+No desenvolvimento da aplicação foram aplicados vários padrões de design de software. 
+Inicialmente a representação do modelo lógico seguiu a arquitetura **DDD**, domain-driven design, como forma introdutória para a reestruturação e nova aplicação do modelo de domínio.
+Foram introduzidos conceitos como os *aggregates* e *value objects* que permitiram iniciar a reengenharia da aplicação e criar as bases para a utilização da arquitetura **Onion**.
+
+DDD diagram
+
+A forma final da aplicação utiliza a arquitetura **Onion** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
+O diagrama de classes apresenta-se dividido em 4 camadas, **infrastructure**, **interface adapters**, **use case services** e **domain**, sendo a infrastructure a mais exterior e a domain a mais interior, representado na seguinte imagem.
+
 Class Diagram
 
 ![class-diagram](diagrams/class-diagram-general.png)
@@ -175,9 +184,17 @@ Class Diagram
 ### Vista de Processos
 TBD
 
-### Vista de Implementação
+Seguindo a estruturação apresentada na vista lógica é possível construir a **sequência de processos que serão a base de funcionamento para a implementação das user stories**. 
 
-Sequence diagram
+Aplicando a estrutura do diagrama de sequência podemos concluir que segue um padrão comum para todas as **user stories** da aplicação.
+Desta forma, há um pedido http direccionado ao **REST controller** que invoca um service, específico para cada caso de uso, onde a lógica de negócio será aplicada. Daqui será invocado o repositório do respetivo agregado envolvido, que será responsável pela comunicação com a persistência, e mediante o tipo de pedido adicionar ou obter a informação pretendida.
+
+Entre cada uma destas etapas serão invocados **assemblers** cuja finalidade é mapear os dados com o objectivo de proteger e encapsular a informação proveniente de camadas diferentes. Isto permite-nos respeitar os princípios do encapsulamento e tornar a aplicação escalável.
+
+Esta arquitetura garante que o **single responsibility principle** é respeitado.
+
+
+Sequence diagram 
 
 ```puml
 @startuml
@@ -243,6 +260,10 @@ return ResponseEntity\n(outputEntityDTO, HttpStatus)
 
 @enduml
 ```
+
+### Vista de Implementação
+
+
  
 
 ### Vista Física
