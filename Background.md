@@ -25,7 +25,7 @@
 >- describing the background and rationale for the software architecture;
 >- explaining the constraints and influences that led to the current architecture;
 >- describing the major architectural approaches that have been utilized in the architecture.
-  
+
 ## Problem Background
 >The sub-parts of this section explain the constraints that provided the significant influence over the architecture.
 
@@ -49,32 +49,29 @@ Nesta edição do 5º semestre da LEI teremos a colaboração da empresa OPT
 > This section lists the functional requirements, quality attributes and design constraints. It may point to a separate requirements document.
 
 #### Functional requirements
-1. Como data administrator, quero importar nós, percursos, linhas, tipos de viatura e tipos de tripulantes de dum ficheiro .glx.
-2. Como data administrator, quero criar nós da rede indicando o seu nome, se é ou não uma estação de recolha ou ponto de rendição e as suas coordenadas.
-3. Como data administrator, quero criar linha indicando o seu código (ex., “C”), nome (ex., “Linha Verde”) e os seus nós terminais (ex., Campanhã, ISMAI), bem como eventuais restrições sobre o tipo de viatura e tipo de tripulante.
-4. Como data administrator, quero definir um percurso de ida/volta de uma linha. Definir os vários segmentos que constituem um percurso indicando a ordem e a distância e tempo de viagem de cada segmento
-
-[...]
-
-19.  Como data administrator, quero listar serviço de viatura num determinado dia.
-20.  Como data administrator, quero listar serviço de tripulante num determinado dia.
-
-[...]
-
-21. Como cliente ou gestor pretendo visualizar graficamente em 2D a rede de transportes.
-22. Como cliente ou gestor pretendo controlar a visualização. Adicionar os comandos da câmara pan e zoom; o comando orbit deverá estar inativo (sugestão: botão direito do rato – pan; roda do rato – zoom).
-23. Como cliente ou gestor pretendo ter uma representação da rede georreferenciada. Subpor a área geográfica (mapa) abrangida pela rede de transportes.
-
-[...]
-
-29. Como cliente quero aceder e cancelar a minha conta nos casos e nas condições legalmente permitidas.
-
-[...]
-
-30. Como cliente ou gestor pretendo controlar a visualização. Adicionar objetos de interação (por exemplo, botões, sliders, etc.) que permitam configurar as condições de iluminação da cena; estes objetos deverão estar ativos no modo 3D e inativos ou invisíveis no modo 2D.
-31. Como cliente ou gestor pretendo aumentar o realismo da navegação na primeira pessoa. Detetar as colisões da viatura com os modelos 3D representativos dos nós da rede.
-
-[...]
+1. US001 As a system manager, I want to create a standard category.
+2. US002 As a system manager, I want to get the standard categories tree.
+3. US010 As a system manager, I want to create a family and set the family administrator.
+4. US101 As a family administrator, I want to add family members.
+5. US104 As a family administrator, I want to get the list of family members and their relations.
+6. US105 As a family administrator, I want to create a relation between two family members.
+7. US110 As a family administrator, I want to get the list of the categories on the family’s category tree.
+8. US120 As a family administrator, I want to create a family cash account.
+9. US150 As a family member, I want to get my profile’s information.
+10. US151 As a family member, I want to add an email account to my profile.
+11. US106 As a family administrator, I want to change the relation between two family members.
+12. US111 As a family administrator, I want to add a category to the family’s category tree.
+13. US130 As a family administrator, I want to transfer money from the family’s cash account to another family member’s cash account.
+14. US135 As a family administrator, I want to check the balance of the family’s 74 cash account or of a given family member.
+15. US170 As a family member, I want to create a personal cash account.
+16. US171 As a family member, I want to add a bank account I have.
+17. US172 As a family member, I want to add a bank savings account I have.
+18. US173 As a family member, I want to add a credit card account I have.
+19. US180 As a family member, I want to transfer money from my cash account to another family member’s cash account.
+20. US181 As a family member, I want to register a payment that I have made using one of my cash accounts.
+21. US185 As a family member, I want to check the balance of one of my accounts.
+22. US186 As a family member, I want to get the list of movements on one of my accounts between to dates.
+23. US188 As a parent, I want to check the balance of one of my children’s cash account.
 
 <inserir aqui o modelo de casos de uso/>
 
