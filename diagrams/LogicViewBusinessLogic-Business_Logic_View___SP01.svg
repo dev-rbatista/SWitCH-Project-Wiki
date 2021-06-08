@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="555px" preserveAspectRatio="none" style="width:607px;height:555px;background:#FFFFFF;" version="1.1" viewBox="0 0 607 555" width="607.5px" zoomAndPan="magnify"><defs><filter height="300%" id="fjjlxrlum229j" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.5"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="5.0" dy="5.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="22.5" lengthAdjust="spacing" textLength="280" x="155.625" y="23.3569">Business Logic View - SP01</text><!--MD5=[7be9c8b18c97d724ada7e1ab600ea974]
+cluster FFM_BL--><rect fill="#FFFFFF" filter="url(#fjjlxrlum229j)" height="501.25" style="stroke:#000000;stroke-width:1.875;" width="508.75" x="81.25" y="37.0508"/><rect fill="#FFFFFF" height="12.5" style="stroke:#000000;stroke-width:1.875;" width="18.75" x="565" y="43.3008"/><rect fill="#FFFFFF" height="2.5" style="stroke:#000000;stroke-width:1.875;" width="5" x="562.5" y="45.8008"/><rect fill="#FFFFFF" height="2.5" style="stroke:#000000;stroke-width:1.875;" width="5" x="562.5" y="50.8008"/><text fill="#000000" font-family="sans-serif" font-size="17.5" font-style="italic" lengthAdjust="spacing" textLength="107.5" x="281.875" y="71.4673">«component»</text><text fill="#000000" font-family="sans-serif" font-size="17.5" font-weight="bold" lengthAdjust="spacing" textLength="177.5" x="246.875" y="93.479">FFM_BusinessLogic</text><!--MD5=[c8d8015be4a68b67333a67fa62ed69cb]
+entity Model_API--><ellipse cx="347.5" cy="311.4258" fill="#FEFECE" filter="url(#fjjlxrlum229j)" rx="10" ry="10" style="stroke:#A80036;stroke-width:1.875;"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="83.75" x="305.625" y="350.8423">Model_API</text><!--MD5=[c546ec13c67f65a000291015be95df60]
+entity Service_API--><ellipse cx="213.75" cy="155.1758" fill="#FEFECE" filter="url(#fjjlxrlum229j)" rx="10" ry="10" style="stroke:#A80036;stroke-width:1.875;"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="95" x="166.25" y="194.5923">Service_API</text><!--MD5=[729380683a003f18378293fefe83661d]
+entity Utils_API--><ellipse cx="213.75" cy="467.6758" fill="#FEFECE" filter="url(#fjjlxrlum229j)" rx="10" ry="10" style="stroke:#A80036;stroke-width:1.875;"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="68.75" x="179.375" y="507.0923">Utils_API</text><!--MD5=[1b9dce2ce56fb0e0072eca4d439af425]
+entity Controllers--><rect fill="#FFFFFF" filter="url(#fjjlxrlum229j)" height="81.5234" style="stroke:#A80036;stroke-width:1.875;" width="157.5" x="135" y="270.8008"/><rect fill="#FFFFFF" height="12.5" style="stroke:#A80036;stroke-width:1.875;" width="18.75" x="267.5" y="277.0508"/><rect fill="#FFFFFF" height="2.5" style="stroke:#A80036;stroke-width:1.875;" width="5" x="265" y="279.5508"/><rect fill="#FFFFFF" height="2.5" style="stroke:#A80036;stroke-width:1.875;" width="5" x="265" y="284.5508"/><text fill="#000000" font-family="sans-serif" font-size="17.5" font-style="italic" lengthAdjust="spacing" textLength="107.5" x="153.75" y="313.9673">«component»</text><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="86.25" x="164.375" y="335.979">Controllers</text><!--MD5=[d98cb1d0eeb2b90d1ef52cfc0fcf4fea]
+entity Model--><rect fill="#FFFFFF" filter="url(#fjjlxrlum229j)" height="81.5234" style="stroke:#A80036;stroke-width:1.875;" width="157.5" x="402.5" y="270.8008"/><rect fill="#FFFFFF" height="12.5" style="stroke:#A80036;stroke-width:1.875;" width="18.75" x="535" y="277.0508"/><rect fill="#FFFFFF" height="2.5" style="stroke:#A80036;stroke-width:1.875;" width="5" x="532.5" y="279.5508"/><rect fill="#FFFFFF" height="2.5" style="stroke:#A80036;stroke-width:1.875;" width="5" x="532.5" y="284.5508"/><text fill="#000000" font-family="sans-serif" font-size="17.5" font-style="italic" lengthAdjust="spacing" textLength="107.5" x="421.25" y="313.9673">«component»</text><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="47.5" x="451.25" y="335.979">Model</text><!--MD5=[3ab6bc66408bc465e62c4c0dcccb802d]
+entity Services--><rect fill="#FFFFFF" filter="url(#fjjlxrlum229j)" height="81.5234" style="stroke:#A80036;stroke-width:1.875;" width="157.5" x="268.75" y="114.5508"/><rect fill="#FFFFFF" height="12.5" style="stroke:#A80036;stroke-width:1.875;" width="18.75" x="401.25" y="120.8008"/><rect fill="#FFFFFF" height="2.5" style="stroke:#A80036;stroke-width:1.875;" width="5" x="398.75" y="123.3008"/><rect fill="#FFFFFF" height="2.5" style="stroke:#A80036;stroke-width:1.875;" width="5" x="398.75" y="128.3008"/><text fill="#000000" font-family="sans-serif" font-size="17.5" font-style="italic" lengthAdjust="spacing" textLength="107.5" x="287.5" y="157.7173">«component»</text><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="67.5" x="307.5" y="179.729">Services</text><!--MD5=[4c3229e8240dfa29ecc305808e5086bb]
+entity Utils--><rect fill="#FFFFFF" filter="url(#fjjlxrlum229j)" height="81.5234" style="stroke:#A80036;stroke-width:1.875;" width="157.5" x="268.75" y="427.0508"/><rect fill="#FFFFFF" height="12.5" style="stroke:#A80036;stroke-width:1.875;" width="18.75" x="401.25" y="433.3008"/><rect fill="#FFFFFF" height="2.5" style="stroke:#A80036;stroke-width:1.875;" width="5" x="398.75" y="435.8008"/><rect fill="#FFFFFF" height="2.5" style="stroke:#A80036;stroke-width:1.875;" width="5" x="398.75" y="440.8008"/><text fill="#000000" font-family="sans-serif" font-size="17.5" font-style="italic" lengthAdjust="spacing" textLength="107.5" x="287.5" y="470.2173">«component»</text><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="32.5" x="325" y="492.229">Utils</text><!--MD5=[789198c106dbffcd010c9a0f7b3ba6c3]
+entity BL_API--><ellipse cx="36.25" cy="311.4258" fill="#FEFECE" filter="url(#fjjlxrlum229j)" rx="10" ry="10" style="stroke:#A80036;stroke-width:1.875;"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="57.5" x="7.5" y="350.8423">BL_API</text><!--MD5=[5931e40fc27dd6070a3e5b8e6a652774]
+link BL_API to FFM_BL--><path codeLine="20" d="M47.85,311.4258 C54.9688,311.4258 62.0906,311.4258 69.2125,311.4258 C72.7734,311.4258 76.3344,311.4258 79.8949,311.4258 C80.34,311.4258 80.7851,311.4258 81.2301,311.4258 " fill="none" id="BL_API-to-FFM_BL" style="stroke:#A80036;stroke-width:1.25;"/><rect fill="#FFFFFF" height="12.5" style="stroke:#A80036;stroke-width:1.875;" width="12.5" x="74.9801" y="305.1758"/><!--MD5=[07b2aa600c45fd3c6f1a9f64e351f940]
+link FFM_BL to Controllers--><path d="M91.725,311.4258 C106.025,311.4258 120.325,311.4258 134.625,311.4258 " fill="none" id="FFM_BL-Controllers" style="stroke:#A80036;stroke-width:1.25;"/><!--MD5=[ea937eb6fe57d73ddafce1dff0ad8c5e]
+link Controllers to Model_API--><path codeLine="23" d="M292.6375,311.4258 C302.9,311.4258 313.1625,311.4258 323.4125,311.4258 " fill="none" id="Controllers-to-Model_API" style="stroke:#A80036;stroke-width:1.25;"/><path d="M332.0773,300.8542 A11.25,11.25 0 0 0 332.0773 321.9973" style="stroke:#A80036;stroke-width:1.875;fill:none;"/><!--MD5=[e853fa65194a126914e98bfca697edf7]
+reverse link Service_API to Controllers--><path codeLine="24" d="M213.75,179.1383 C213.75,203.2133 213.75,241.7008 213.75,270.7383 " fill="none" id="Service_API-backto-Controllers" style="stroke:#A80036;stroke-width:1.25;"/><path d="M203.1785,170.361 A11.25,11.25 0 0 0 224.3215 170.361" style="stroke:#A80036;stroke-width:1.875;fill:none;"/><!--MD5=[74f3b7522baa2874cc780c399ce3d474]
+link Controllers to Utils_API--><path codeLine="25" d="M213.75,352.2758 C213.75,381.2883 213.75,419.6633 213.75,443.6883 " fill="none" id="Controllers-to-Utils_API" style="stroke:#A80036;stroke-width:1.25;"/><path d="M224.3215,452.4531 A11.25,11.25 0 0 0 203.1785 452.4531" style="stroke:#A80036;stroke-width:1.875;fill:none;"/><!--MD5=[02e2b05261ac95dd186c10248fd51ec6]
+reverse link Service_API to Services--><path codeLine="26" d="M237.8125,155.1758 C248.1,155.1758 258.4,155.1758 268.7,155.1758 " fill="none" id="Service_API-backto-Services" style="stroke:#A80036;stroke-width:1.25;"/><path d="M229.0977,165.7473 A11.25,11.25 0 0 0 229.0977 144.6042" style="stroke:#A80036;stroke-width:1.875;fill:none;"/><!--MD5=[5d8343f89c26f980cc7fc942841ffb9a]
+link Model_API to Model--><path codeLine="27" d="M359,311.4258 C373.475,311.4258 387.9625,311.4258 402.45,311.4258 " fill="none" id="Model_API-Model" style="stroke:#A80036;stroke-width:1.25;"/><!--MD5=[3b0f4385c8ab79614242b50bb8574b75]
+reverse link Utils_API to Utils--><path codeLine="28" d="M237.8125,467.6758 C248.1,467.6758 258.4,467.6758 268.7,467.6758 " fill="none" id="Utils_API-backto-Utils" style="stroke:#A80036;stroke-width:1.25;"/><path d="M229.0977,478.2473 A11.25,11.25 0 0 0 229.0977 457.1042" style="stroke:#A80036;stroke-width:1.875;fill:none;"/><!--MD5=[4fa4a393a2623ee37c63a3f5e11eb66a]
+link Services to Model_API--><path codeLine="29" d="M347.5,196.0258 C347.5,225.0383 347.5,263.4133 347.5,287.4383 " fill="none" id="Services-to-Model_API" style="stroke:#A80036;stroke-width:1.25;"/><path d="M358.0715,296.2031 A11.25,11.25 0 0 0 336.9285 296.2031" style="stroke:#A80036;stroke-width:1.875;fill:none;"/><!--MD5=[01b4b7bfa76c804d0d433c0a8b28a130]
+reverse link Model_API to Utils--><path codeLine="30" d="M347.5,335.3883 C347.5,359.4633 347.5,397.9508 347.5,426.9883 " fill="none" id="Model_API-backto-Utils" style="stroke:#A80036;stroke-width:1.25;"/><path d="M336.9285,326.611 A11.25,11.25 0 0 0 358.0715 326.611" style="stroke:#A80036;stroke-width:1.875;fill:none;"/><!--MD5=[e0f331cd899332b78f5a3b7ddc418994]
+@startuml
+
+title Business Logic View - SP01
+
+circle "BL_API" as BL_API
+
+component FFM_BusinessLogic as FFM_BL <<component>> {
+   component Controllers <<component>> {
+   }
+   circle Model_API
+   circle Service_API
+   circle Utils_API
+   component Model <<component>> {
+   }
+   component Services <<component>> {
+   }
+   component Utils <<component>> {
+   }
+}
+
+BL_API -# FFM_BL
+
+FFM_BL - Controllers
+Controllers -( Model_API
+Controllers -up-( Service_API
+Controllers -down-( Utils_API
+Service_API )-right- Services
+Model_API -right- Model
+Utils_API )-right- Utils
+Services -( Model_API
+Utils -up-( Model_API
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 13:40:07 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
