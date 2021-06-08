@@ -75,6 +75,8 @@ Nesta edição do 5º semestre da LEI teremos a colaboração da empresa OPT
 
 <inserir aqui o modelo de casos de uso/>
 
+## Meter homenzinhos com Use Case ( Um gorducho com setas para as funcionalidades que lhe dizem respeito - System Manager, Family Admin, Family Member)
+
 #### Quality attributes
 Os atributos de qualidade são categorizados e sistematizados segundo o modelo [FURPS+](https://pt.wikipedia.org/wiki/FURPS).
 
