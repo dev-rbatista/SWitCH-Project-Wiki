@@ -170,6 +170,8 @@ TBD
 
 Class Diagram
 
+![class-diagram](diagrams/class-diagram-general.png)
+
 ### Vista de Processos
 TBD
 
