@@ -13,9 +13,9 @@
 
 A arquitetura de software dum sistema é a estrutura ou estruturas desse sistema, que inclui elementos do software e suas proprieades visíveis externamente, e as relações entre ele (Bass 2012).
 
-Este SAD descreve a arquitetura de software do sistema a desenvolver por solicitação da Autoridade Intermunicipal de Transportes (AIT) para gestão e planeamento de transportes públicos que permite a gestão bem como consulta pelo público em geral de diferentes redes de transportes, linhas e viagens, bem como o planeamento dos serviços de viaturas e tripulantes a efetuar nessas linhas.
+Este SAD descreve a arquitetura de software do sistema a desenvolver para gestão de Finanças Familiares.
 
-Este SAD é desenvolvido num contexto académico de ensino-aprendizagem (no 5º semestre da LEI no ano letivo 2020-2021), em que várias competências estão a ser adquiridas ao longo do semestre pelos/as estudantes, ao mesmo tempo que desenvolvem o sistema.
+Este SAD é desenvolvido num contexto académico de ensino-aprendizagem (no 2º semestre do Programa SWITCH no ano letivo 2020-2021), em que várias competências estão a ser adquiridas ao longo do semestre pelos/as estudantes, ao mesmo tempo que desenvolvem o sistema.
 
 Porque visa suportar o processo de ensino-aprendizagem, não tem como objetivo ser completo ou descrever a melhor arquitetura possível, mas servir de guia e exemplo, em linha com as competências a adquirir em cada iteração/sprint do projeto.
 
