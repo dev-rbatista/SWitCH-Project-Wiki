@@ -8,6 +8,8 @@
 
 - [Vista de Processos](#vista-de-processos)
   - [SSD US010](#ssd-us1)
+	
+
   - [SSD US101](#ssd-us2)
   - [SSD US104](#ssd-us3)
   - [SSD US105](#ssd-us4)
@@ -57,7 +59,7 @@ O Modelo de Vistas 4+1 [[Krutchen-1995]](References.md#Kruchten-1995) propõe a 
 - Vista de processos: relativa ao fluxo de processos ou interações no sistema;
 - Vista de desenvolvimento: relativa à organização do software no seu ambiente de desenvolvimento;
 - Vista física: relativa ao mapeamento dos vários componentes do software em hardware, i.e. onde é executado o software;
-- Vista de cenários: relativa à associação de processos de negócio com atores capazes de os espoletar.
+- Vista de cenários: relativa à associação de processos de negócio com atores capazes de os despoletar.
 
 O Modelo C4 [[Brown-2020]](References.md#Brown-2020)[[C4-2020]](References.md#C4-2020) defende a descrição do software através de quatro níveis de abstração: sistema, contentor, componente e código. Cada nível adota uma granularidade mais fina que o nível que o antecede, dando assim acesso a mais detalhe de uma parte mais pequena do sistema. Estes níveis podem ser equiparáveis a mapas, e.g. a vista de sistema corresponde ao globo, a vista de contentor corresponde ao mapa de cada continente, a vista de componentes ao mapa de cada país e a vista de código ao mapa de estradas e bairros de cada cidade.
 Diferentes níveis permitem contar histórias diferentes a audiências distintas.
