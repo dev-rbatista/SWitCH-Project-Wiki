@@ -25,24 +25,17 @@
 			- [(outros SSD arquiteturalmente relevantes)](#outros-ssd-arquiteturalmente-relevantes-1)
 		- [Vista de Implementação](#vista-de-implementação)
 		- [Vista Física](#vista-física)
-	- [Nível 3 ()](#nível-3-mdr)
-		- [Vista Lógica](#vista-lógica-2)
-		- [Vista de Processos](#vista-de-processos-2)
-			- [SD US01](#sd-us01)
-			- [(outros SSD arquiteturalmente relevantes)](#outros-ssd-arquiteturalmente-relevantes-2)
-		- [Vista de Implementação](#vista-de-implementação-1)
-		- [Vista Física](#vista-física-1)
-	- [Nível 3 (UI)](#nível-3-ui)
+	- [Nível 3 (Front end)](#nível-3-ui)
 		- [Vista Lógica](#vista-lógica-3)
 		- [Vista de Processos](#vista-de-processos-3)
 		- [Vista de Implementação](#vista-de-implementação-2)
 		- [Vista Física](#vista-física-2)
-	- [Nível 3 (MDV)](#nível-3-mdv)
+	- [Nível 3 (Back end)](#nível-3-mdv)
 		- [Vista Lógica](#vista-lógica-4)
 		- [Vista de Processos](#vista-de-processos-4)
 		- [Vista de Implementação](#vista-de-implementação-3)
 		- [Vista Física](#vista-física-3)
-	- [Nível 3 (Planeamento)](#nível-3-planeamento)
+	- [Nível 3 (Persistência)](#nível-3-planeamento)
 		- [Vista Lógica](#vista-lógica-5)
 		- [Vista de Processos](#vista-de-processos-5)
 		- [Vista de Implementação](#vista-de-implementação-4)
@@ -81,6 +74,24 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 
 ### Vista de Processos
 #### SSD US1
+
+```` puml
+
+    autonumber
+    title createStandardCategory SSD
+    actor "System Manager" as systemManager
+    participant "System" as system
+
+    activate systemManager
+    systemManager -> system: create a Standard Category
+    activate system
+    systemManager -> system: input required data
+    system --> systemManager: inform success
+    deactivate system
+
+@endpuml
+````
+
 ![N1-VP-US1](diagramas/nivel1/N1-VP-US1.png)
 
 #### SSD US2
@@ -154,7 +165,7 @@ TBD
 ### Vista Física
 TBD
 
-## Nível 3 (MDV)
+## Nível 3 (Back-end)
 ### Vista Lógica
 TBD
 
@@ -167,7 +178,7 @@ TBD
 ### Vista Física
 TBD
 
-## Nível 3 (Planeamento)
+## Nível 3 (Persistência)
 ### Vista Lógica
 TBD
 
