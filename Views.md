@@ -70,7 +70,7 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ## Nível 1
 ### Vista Lógica
 
-![N1-VL](diagramas/nivel1/N1-VL.png)
+![img.png](Images/img.png)
 
 ### Vista de Processos
 #### SSD US1
@@ -271,10 +271,19 @@ TBD
 
 ## Nível 3 (Persistência)
 ### Vista Lógica
-TBD
+
+Para conseguir a persistência de dados na aplicação, foi utilizado um modelo em espelho dos objetos de domínio. 
+
+Cada Objeto de Domínio que se pretende guardar em persistência tem um Objeto de Dados correspondente que utiliza a _programming interface_ Jakarta Persistence API (JPA). Esta simetria de Domínio/Dados é representada na imagem seguinte:
+
+
+![mirror](https://imgur.com/9Of4KB4.jpg)
 
 ### Vista de Processos
-TBD
+Assim que os Objetos de Domínio forem convertidos para Objetos de Dados JPA (usando _Assemblers_ dedicados ao efeito em classes _Repository_ de domínio), serão adicionados à base de dados usando _interfaces_ de Repositórios CRUD adequados ao seu tipo.
+O repositório CRUD irá adicionar a informação contida nos Objetos de Dados JPA à base de dados, devolvendo uma cópia do objeto idêntica ou, em alguns casos, com um ID gerado automaticamente aquando da adição. Esta sequencia de processos está representada na imagem seguinte, uma secção do SD da US120 - _Create Family Cash Account_:
+
+![repo](https://i.imgur.com/2fHdjOO.png)
 
 ### Vista de Implementação
 TBD
