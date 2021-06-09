@@ -80,7 +80,7 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ## Nível 1
 ### Vista Lógica
 
-![N1-VL](diagramas/nivel1/N1-VL.png)
+![img.png](Images/img.png)
 
 ### Vista de Processos
 #### SSD US001
@@ -150,7 +150,7 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ## Nível 2
 ### Vista Lógica
 
-![N2-VL](diagramas/nivel2/N2-VL.png)
+![img_1.png](Images/img_1.png)
 
 ### Vista de Processos
 
@@ -318,13 +318,49 @@ TBD
 
 ## Nível 3 (Persistência)
 ### Vista Lógica
-TBD
+
+Para conseguir a persistência de dados na aplicação, foi utilizado um modelo em espelho dos objetos de domínio. 
+
+Cada Objeto de Domínio que se pretende guardar em persistência tem um Objeto de Dados correspondente que utiliza a _programming interface_ Jakarta Persistence API (JPA). Esta simetria de Domínio/Dados é representada na imagem seguinte:
+
+
+![mirror](https://imgur.com/9Of4KB4.jpg)
 
 ### Vista de Processos
-TBD
+Assim que os Objetos de Domínio forem convertidos para Objetos de Dados JPA (usando _Assemblers_ dedicados ao efeito em classes _Repository_ de domínio), serão adicionados à base de dados usando _interfaces_ de Repositórios CRUD adequados ao seu tipo.
+O repositório CRUD irá adicionar a informação contida nos Objetos de Dados JPA à base de dados, devolvendo uma cópia do objeto idêntica ou, em alguns casos, com um ID gerado automaticamente aquando da adição. Esta sequencia de processos está representada na imagem seguinte, uma secção do SD da US120 - _Create Family Cash Account_:
+
+![repo](https://i.imgur.com/2fHdjOO.png)
 
 ### Vista de Implementação
-TBD
+A adição/recolha de informação à base de dados é da inteira responsabilidade dos RepositóriosJPA (_CRUD Repositories_). Os Objetos de Dados JPA apenas são manipulados por estes repositórios, sendo o único envolvimento por outras classes a sua tradução de/para domínio por parte dos DataDomainAssemblers.
+Não há nenhum contacto com Objetos JPA e classes na camada de Serviço:
+
+![imp](https://i.imgur.com/mZDVBAV.png)
+
+
+
 
 ### Vista Física
-TBD
+A implementação da aplicação usa duas bases de dados diferentes: POSTGRES para produção e H2 para testes. Esta distinção é obtida através de dois ficheiros de propriedades distintos, que são indicados através duma tag _TestPropertySource_:
+
+```java
+@SpringBootApplication
+@TestPropertySource(locations = "classpath:application-test.properties")
+public class
+FFMSpringBootApplication {...}
+```
+
+A base de dados POTSGRES está de momento alojada num servidor Amazon Web Service (AWS) 
+
+```java
+spring.jpa.database=POSTGRESQL
+spring.datasource.platform=postgres
+spring.datasource.url=jdbc:postgresql://ffmapp.c5zejpkmwdl8.eu-west-3.rds.amazonaws.com:5432/ffmapp
+spring.datasource.username=g3
+spring.datasource.password=*********
+spring.jpa.show-sql=true
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+```
