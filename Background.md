@@ -75,7 +75,11 @@ Nesta edição do SWitCH; teremos a colaboração de product owners de diversas 
 22. US186 As a family member, I want to get the list of movements on one of my accounts between to dates.
 23. US188 As a parent, I want to check the balance of one of my children’s cash account.
 
-<inserir aqui o modelo de casos de uso/>
+![Use Case Diagram - System Manager](/diagrams/UseCaseDiagramSM.png)
+
+![Use Case Diagram - Family Administrator](/diagrams/UseCaseDiagramFA.png)
+
+![Use Case Diagram - Family Member](/diagrams/UseCaseDiagramFM.png)
 
 #### Quality attributes
 Os atributos de qualidade são categorizados e sistematizados segundo o modelo [FURPS+](https://en.wikipedia.org/wiki/FURPS).
