@@ -51,29 +51,29 @@ Nesta edição do SWitCH; teremos a colaboração de product owners de diversas 
 1. US001 As a system manager, I want to create a standard category.
 2. US002 As a system manager, I want to get the standard categories tree.
 3. US003 As a system manager, I want that the list of standard categories to include those loaded (whenever needed) from a complementary system defined by configuration.
-3. US010 As a system manager, I want to create a family and set the family administrator.
-4. US080 As a system user, I want to login into the application in order to use it.
-4. US101 As a family administrator, I want to add family members.
-5. US104 As a family administrator, I want to get the list of family members and their relations.
-6. US105 As a family administrator, I want to create a relation between two family members.
-11. US106 As a family administrator, I want to change the relation between two family members.
-7. US110 As a family administrator, I want to get the list of the categories on the family’s category tree.
-~~12. US111 As a family administrator, I want to add a category to the family’s category tree.~~
-12. US111v2 As a family administrator, I want to add a custom category to the family’s category tree "extended" from either external or internal standard categories.
-8. US120 As a family administrator, I want to create a family cash account.
+4. US010 As a system manager, I want to create a family and set the family administrator.
+5 US080 As a system user, I want to login into the application in order to use it.
+6. US101 As a family administrator, I want to add family members.
+7. US104 As a family administrator, I want to get the list of family members and their relations.
+8. US105 As a family administrator, I want to create a relation between two family members.
+9. US106 As a family administrator, I want to change the relation between two family members.
+10. US110 As a family administrator, I want to get the list of the categories on the family’s category tree.
+~~11. US111 As a family administrator, I want to add a category to the family’s category tree.~~
+11. US111v2 As a family administrator, I want to add a custom category to the family’s category tree "extended" from either external or internal standard categories.
+12. US120 As a family administrator, I want to create a family cash account.
 13. US130 As a family administrator, I want to transfer money from the family’s cash account to another family member’s cash account.
 14. US135 As a family administrator, I want to check the balance of the family’s 74 cash account or of a given family member.
-12. US150 As a family member, I want to get my profile’s information.
-10. US151 As a family member, I want to add an email account to my profile.
-15. US170 As a family member, I want to create a personal cash account.
-16. US171 As a family member, I want to add a bank account I have.
-17. US172 As a family member, I want to add a bank savings account I have.
-18. US173 As a family member, I want to add a credit card account I have.
-19. US180 As a family member, I want to transfer money from my cash account to another family member’s cash account.
-20. US181 As a family member, I want to register a payment that I have made using one of my cash accounts.
-21. US185 As a family member, I want to check the balance of one of my accounts.
-22. US186 As a family member, I want to get the list of movements on one of my accounts between to dates.
-23. US188 As a parent, I want to check the balance of one of my children’s cash account.
+15. US150 As a family member, I want to get my profile’s information.
+16. US151 As a family member, I want to add an email account to my profile.
+17. US170 As a family member, I want to create a personal cash account.
+18. US171 As a family member, I want to add a bank account I have.
+19. US172 As a family member, I want to add a bank savings account I have.
+20. US173 As a family member, I want to add a credit card account I have.
+21. US180 As a family member, I want to transfer money from my cash account to another family member’s cash account.
+22. US181 As a family member, I want to register a payment that I have made using one of my cash accounts.
+23. US185 As a family member, I want to check the balance of one of my accounts.
+24. US186 As a family member, I want to get the list of movements on one of my accounts between to dates.
+25. US188 As a parent, I want to check the balance of one of my children’s cash account.
 
 ![Use Case Diagram - System Manager](./diagrams/UseCaseDiagramSM.png)
 
