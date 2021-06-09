@@ -76,15 +76,24 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ## Nível 2
 ### Vista Lógica
 
-![img_1.png](Images/img_1.png)
+![LogicView_Nível2.png](diagrams/LogicView_Nível2.png)
 
 ### Vista de Processos
 
-#### SSD US13 (Porquê esta US?)
-TBD
+#### SSD US Criar/Adicionar um recurso
 
-#### (outros SSD arquiteturalmente relevantes)
-[...]
+![ProcessView_Nível2_AddOrCreate.png](Process%20View_Nível2_AddOrCreate.png)
+
+
+#### SSD US Obter um recurso
+
+![ProcessView_Nível2_Get.png](diagrams/ProcessView_Nível2_Get.png)
+
+#### SSD US Obter um recurso com API Externa (Standard Categories)
+
+![ProcessView_Nível2_Get_External.png](diagrams/ProcessView_Nível2_Get_External.png)
+
+
 
 ### Vista de Implementação
 ![L2_ImplementationView.png](diagrams/L2_ImplementationView.png)!
