@@ -223,8 +223,8 @@ Foram introduzidos conceitos como os *aggregates* e *value objects* que permitir
 
 DDD diagram
 
-A forma final da aplicação utiliza a arquitetura **Onion** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
-O diagrama de classes apresenta-se dividido em 4 camadas, **infrastructure**, **interface adapters**, **use case services** e **domain**, sendo a infrastructure a mais exterior e a domain a mais interior, representado na seguinte imagem.
+A forma final da aplicação utiliza a arquitetura ***Onion*** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
+O diagrama de classes apresenta-se dividido em 4 camadas, ***infrastructure***, ***interface adapters***, ***use case services*** e ***domain***, sendo a *infrastructure* a mais exterior e o *domain* a mais interior, representado na seguinte imagem.
 
 Class Diagram
 
@@ -237,44 +237,32 @@ Seguindo a estruturação apresentada na vista lógica é possível construir a 
 ![sd_us001](diagrams/general%20diagram%20SD.png)
 
 Aplicando a estrutura do diagrama de sequência podemos concluir que segue um padrão comum para todas as **user stories** da aplicação.
-Desta forma, há um pedido http direccionado ao **REST controller** que invoca um service, específico para cada caso de uso, onde a lógica de negócio será aplicada. Daqui será invocado o repositório do respetivo agregado envolvido, que será responsável pela comunicação com a persistência, e mediante o tipo de pedido adicionar ou obter a informação pretendida.
+Desta forma, há um pedido http direccionado ao ***REST controller*** que invoca um ***service***, específico para cada caso de uso, onde a lógica de negócio será aplicada. Daqui será invocado o **repositório** do respetivo agregado envolvido, que será responsável pela comunicação com a persistência, e mediante o tipo de pedido adicionar ou obter a informação pretendida.
 
-Entre cada uma destas etapas serão invocados **assemblers** cuja finalidade é mapear os dados com o objectivo de proteger e encapsular a informação proveniente de camadas diferentes. Isto permite-nos respeitar os princípios do encapsulamento e tornar a aplicação escalável.
+Entre cada uma destas etapas serão invocados ***assemblers*** cuja finalidade é mapear os dados com o objectivo de proteger e encapsular a informação proveniente de camadas diferentes. Isto permite-nos respeitar os princípios do encapsulamento e tornar a aplicação escalável.
 
-Esta arquitetura garante que o **single responsibility principle** é respeitado.
+Esta arquitetura garante que o ***single responsibility principle*** é respeitado.
 
+Na seguinte lista serão descritas as características específicas de cada tipo de diagrama
 
-**Lista de diagramas de sequência separados por agregados**:
-
-#### 1) CATEGORY
-
-#### US001 - Create Standard Category
-
-![sd_us001](diagrams/SD/SD_US001_CreateStandardCategory.png)
-
-#### US002 - Create Standard Category Tree
-
-![sd_us002](diagrams/SD/SD_US002_CreateStandardCategoryTree.png)
+#### 1) GET HTTP request example
 
 #### US110 - Get Category list
+
+Nos **pedidos http - Get** o repositório comunica com o repositório JPA para obter todos os dados relativos à user story, neste caso às categorias, converte cada objecto de JPA para objecto de domínio e adiciona a uma lista. Posteriormente essa lista é convertida para um DTO da lista e devolvido ao ***controller*** 
 
 ![sd_us110](diagrams/SD/SD_US110_GetCategoryList.png)
 
 ______
 
-#### 2) FAMILY
+#### 2) POST HTTP request example
 
 #### US010 - Create Family and set Administrator
 
+
+
 ![sd_us010](diagrams/SD/SD_US010_CreateFamilyAndSetAdmin.png)
 
-#### US104 - Get family member list and their relation
-
-![sd_us104](diagrams/SD/SD_US104_GetFamilyMembersListAndTheirRelations.png)
-
-#### US105 - Create relation
-
-![sd_us105](diagrams/SD/SD_US105_CreateRelation.png)
 
 ______
 
@@ -296,18 +284,21 @@ ______
 
 #### 4) Account 
 
-Todas as Accounts seguem a mesma forma de criação variando apenas o OwnerID, familyID ou PersonID.
+Todas as Accounts seguem a mesma forma de criação variando apenas o OwnerID, podendo ser familyID/personID na criação da Cash Account ou personID na criação nos restantes tipos de conta.
 Para as Account de person, os diferentes tipos de Accounts são criadas com a selecção do respectivo AccountType, como se encontra presente no diagrama das Factory 1 e 2.
 
-#### US120 - Create family Cash Account
+
+#### US120 - Create **Family** Cash Account
 
 ![sd_us120](diagrams/SD/SD_US120_CreateFamilyCashAccount.png)
 
-#### US170,171,172,173 - Create Person's Cash, Bank, BankSavings and Credit Accounts
+#### US170,171,172,173 - Create **Person**'s Cash, Bank, BankSavings and Credit Accounts
 
 ![sd_us17X](diagrams/SD/SD_US170:171:172:173_CreateAccount.png)
 
 #### Account Factory 1 (sem accountID)
+
+
 
 ![sd_factory_1](diagrams/SD/SD_extra_AccountFactory_1.png)
 
