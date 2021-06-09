@@ -153,6 +153,7 @@ Alguns detalhes mais (se existissem pais do que 4 níveis, podia ser considerado
 Por agora, não existe necessidade de ser representada.
 
 ## Nível 3 (UI)
+
 ### Vista Lógica
 TBD
 
@@ -164,6 +165,7 @@ TBD
 
 ### Vista Física
 TBD
+
 
 ## Nível 3 (Back-end)
 ### Vista Lógica
@@ -182,9 +184,10 @@ Class Diagram
 ![class-diagram](diagrams/class-diagram-general.png)
 
 ### Vista de Processos
-TBD
 
 Seguindo a estruturação apresentada na vista lógica é possível construir a **sequência de processos que serão a base de funcionamento para a implementação das user stories**. 
+
+![sd_us001](diagrams/general%20diagram%20SD.png)
 
 Aplicando a estrutura do diagrama de sequência podemos concluir que segue um padrão comum para todas as **user stories** da aplicação.
 Desta forma, há um pedido http direccionado ao **REST controller** que invoca um service, específico para cada caso de uso, onde a lógica de negócio será aplicada. Daqui será invocado o repositório do respetivo agregado envolvido, que será responsável pela comunicação com a persistência, e mediante o tipo de pedido adicionar ou obter a informação pretendida.
@@ -194,72 +197,81 @@ Entre cada uma destas etapas serão invocados **assemblers** cuja finalidade é 
 Esta arquitetura garante que o **single responsibility principle** é respeitado.
 
 
-Sequence diagram 
+**Lista de diagramas de sequência separados por agregados**:
 
-```puml
-@startuml
+#### 1) CATEGORY
 
-autonumber
+#### US001 - Create Standard Category
 
-participant ": IController" as controller <<interface>>
-participant ": InputDTOAssembler" as inputDto
-participant ": IService" as service <<interface>>
-participant ": DTODomainAssembler" as dtoDomain
-participant "entity\n : Entity" as entity
-participant ": IRepository" as repository <<interface>>
-participant ": DataDomainAssembler" as dataDomain
-participant "savedEntity\n : Entity" as savedEntity
-participant ": IRepositoryJPA" as repositoryJPA <<interface>>
+![sd_us001](diagrams/SD/SD_US001_CreateStandardCategory.png)
 
--> controller : Request(requestBody)
-activate controller
+#### US002 - Create Standard Category Tree
 
-ref over controller, inputDto
-Assemble ExternalDTO to InputDTO
-end
+![sd_us002](diagrams/SD/SD_US002_CreateStandardCategoryTree.png)
 
-controller -> service : createEntity(inputEntityDTO)
-activate service
+#### US110 - Get Category list
 
-ref over service, dtoDomain
-Assemble InputDTO to Value Objects
-end
+![sd_us110](diagrams/SD/SD_US110_GetCategoryList.png)
 
-service -> entity ** : create(valueObjects)
+______
 
-service -> repository : add(entity)
-activate repository
+#### 2) FAMILY
 
-ref over repository, dataDomain
-Assemble Entity to EntityJPA
-end
+#### US010 - Create Family and set Administrator
 
-repository -> repositoryJPA : save(entityJPA)
-activate repositoryJPA
-return savedEntityJPA
+![sd_us010](diagrams/SD/SD_US010_CreateFamilyAndSetAdmin.png)
 
-ref over repository, dataDomain
-Assemble EntityJPA to Value Objects
-end
+#### US104 - Get family member list and their relation
 
-repository --> savedEntity ** : create(valueObjects)
+![sd_us104](diagrams/SD/SD_US104_GetFamilyMembersListAndTheirRelations.png)
 
-return savedEntity
+#### US105 - Create relation
 
-ref over service, dtoDomain
-Assemble Entity to OutputDTO
-end
+![sd_us105](diagrams/SD/SD_US105_CreateRelation.png)
 
-return outputEntityDTO
+______
 
-ref over controller, inputDto
-Add Links to OutputDTO
-end
+#### 3) PERSON
 
-return ResponseEntity\n(outputEntityDTO, HttpStatus)
+#### US101 - Add family member
 
-@enduml
-```
+![sd_us101](diagrams/SD/SD_US101_AddFamilyMember.png)
+
+#### US150 - Get profile information
+
+![sd_us150](diagrams/SD/SD_US150_GetProfileInformation.png)
+
+#### US151 - Add email
+
+![sd_us151](diagrams/SD/SD_US151_AddEmail.png)
+
+______
+
+#### 4) Account 
+
+Todas as Accounts seguem a mesma forma de criação variando apenas o OwnerID, familyID ou PersonID.
+Para as Account de person, os diferentes tipos de Accounts são criadas com a selecção do respectivo AccountType, como se encontra presente no diagrama das Factory 1 e 2.
+
+#### US120 - Create family Cash Account
+
+![sd_us120](diagrams/SD/SD_US120_CreateFamilyCashAccount.png)
+
+#### US170,171,172,173 - Create Person's Cash, Bank, BankSavings and Credit Accounts
+
+![sd_us17X](diagrams/SD/SD_US170:171:172:173_CreateAccount.png)
+
+#### Account Factory 1 (sem accountID)
+
+![sd_factory_1](diagrams/SD/SD_extra_AccountFactory_1.png)
+
+#### Account Factory 2 (com accountID)
+
+![sd_factory_2](diagrams/SD/SD_extra_AccountFactory_2.png)
+
+#### US135,185,188 - Check balance (of any Account)
+
+![sd_us135](diagrams/SD/SD_US135:185:188_CheckBalance.png)
+
 
 ### Vista de Implementação
 
