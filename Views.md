@@ -157,14 +157,10 @@ No desenvolvimento da aplicação foram aplicados vários padrões de design de 
 Inicialmente a representação do modelo lógico seguiu a arquitetura **DDD**, domain-driven design, como forma introdutória para a reestruturação e nova aplicação do modelo de domínio.
 Foram introduzidos conceitos como os *aggregates* e *value objects* que permitiram iniciar a reengenharia da aplicação e criar as bases para a utilização da arquitetura **Onion**.
 
-DDD diagram
-
 A forma final da aplicação utiliza a arquitetura ***Onion*** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
 O diagrama de classes apresenta-se dividido em 4 camadas, ***infrastructure***, ***interface adapters***, ***use case services*** e ***domain***, sendo a *infrastructure* a mais exterior e o *domain* a mais interior, representado na seguinte imagem.
 
-Class Diagram
-
-![class-diagram](diagrams/class-diagram-general.png)
+![logic-view](diagrams/logic-view-backend.png)
 
 ### Vista de Processos
 
@@ -239,10 +235,10 @@ Como é a persistência que cria o ID's para as accounts o **diagrama Factory 1*
 
 ### Vista de Implementação
 
+Tal como referido na **vista lógica** a implementação de todas as **user stories** segue uma estrutura concêntrica subdivida em **infrastructure**, **interface adapters**, **use case services** e **domain** com as seguintes dependências.
 
+![class-diagram](diagrams/class-diagram-general.png)
 
-### Vista Física
-TBD
 
 ## Nível 3 (Persistência)
 ### Vista Lógica
