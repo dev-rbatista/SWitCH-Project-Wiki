@@ -37,7 +37,7 @@
 ### Context
 > This section describes the goals and major contextual factors for the software architecture. The section includes a description of the role software architecture plays in the life cycle, the relationship to system engineering results and artifacts, and any other relevant factors.
 
-*The solution designed by SWS aims to take advantage of the possibilities of integration with financial entities and other relevant entities (utilities, supermarket chains, etc.). SWS believes that integration will increase the adoption and use of the software, as the tedious and error prone manual input of data is the main reason the users of other solutions present to justify abandoning them. To promote its solution, especially to the big players that it wants to integrate with, SWS aims to develop a “life11 like” demo of the system.*
+*The solution designed by SWS aims to take advantage of the possibilities of integration with financial entities and other relevant entities (utilities, supermarket chains, etc.). SWS believes that integration will increase the adoption and use of the software, as the tedious and error prone manual input of data is the main reason the users of other solutions present to justify abandoning them. To promote its solution, especially to the big players that it wants to integrate with, SWS aims to develop a “life like” demo of the system.*
 
 NB: Contudo, o sistema aqui pedido é uma simplificação daquilo que é um sistema de gestão de finanças familiares, pelo que são assumidas simplificações para tornar o projeto exequível neste âmbito pedagógico.
 

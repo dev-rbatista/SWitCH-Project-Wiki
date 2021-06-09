@@ -3,21 +3,28 @@
 	- [Introduction](#introduction)
 	- [Nível 1](#nível-1)
 		- [Vista Lógica](#vista-lógica)
-
-  ![img](diagramas/nivel1/LogicViewBusinessLogic-Business_Logic_View___SP01.svg)
-
-- [Vista de Processos](#vista-de-processos)
-  - [SSD US010](#ssd-us1)
-	
-
-  - [SSD US101](#ssd-us2)
-  - [SSD US104](#ssd-us3)
-  - [SSD US105](#ssd-us4)
-  - [SSD US150](#ssd-us5)
-  - [SSD US003](#ssd-us5)
-  - [SSD US111v2](#ssd-us5)
-  - [SSD US108](#ssd-us5)
-  - [(outros SSD arquiteturalmente relevantes)](#outros-ssd-arquiteturalmente-relevantes)
+		- [Vista de Processos](#vista-de-processos)
+		- [SSD US001](#ssd-us001)
+		- [SSD US002](#ssd-us002)
+		- [SSD US003](#ssd-us003)
+		- [SSD US101](#ssd-us0101)
+		- [SSD US104](#ssd-us104)
+		- [SSD US105](#ssd-us105)
+		- [SSD US106](#ssd-us106)
+		- [SSD US110](#ssd-us110)
+		- [SSD US111](#ssd-us111)
+		- [SSD US120](#ssd-us120)
+		- [SSD US130](#ssd-us130)
+		- [SSD US135](#ssd-us135)
+		- [SSD US150](#ssd-us150)
+		- [SSD US151](#ssd-us151)
+		- [SSD US170/171/172/173](#ssd-us170/171/172/173)
+		- [SSD US180](#ssd-us180)
+		- [SSD US181](#ssd-us181)
+		- [SSD US185](#ssd-us185)
+		- [SSD US186](#ssd-us186)
+		- [SSD US188](#ssd-us188)
+		(#outros-ssd-arquiteturalmente-relevantes)
 	- [Nível 2](#nível-2)
 		- [Vista Lógica](#vista-lógica-1)
 		- [Vista de Processos](#vista-de-processos-1)
@@ -40,6 +47,9 @@
 		- [Vista de Processos](#vista-de-processos-5)
 		- [Vista de Implementação](#vista-de-implementação-4)
 		- [Vista Física](#vista-física-4)
+
+
+  ![img](diagramas/nivel1/LogicViewBusinessLogic-Business_Logic_View___SP01.svg)
 
 # Views
 
@@ -73,32 +83,13 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ![img.png](Images/img.png)
 
 ### Vista de Processos
-#### SSD US1
+#### Criar Objecto
 
-```` puml
+![L1_ProcessView_CreateObject.png](diagrams/L1_ProcessView_CreateObject.png)
 
-    autonumber
-    title createStandardCategory SSD
-    actor "System Manager" as systemManager
-    participant "System" as system
+#### Obter Objecto
 
-    activate systemManager
-    systemManager -> system: create a Standard Category
-    activate system
-    systemManager -> system: input required data
-    system --> systemManager: inform success
-    deactivate system
-
-@endpuml
-````
-
-![N1-VP-US1](diagramas/nivel1/N1-VP-US1.png)
-
-#### SSD US2
-![N1-VP-US2](diagramas/nivel1/N1-VP-US2.png)
-
-#### (outros SSD arquiteturalmente relevantes)
-[...]
+![L1_ProcessView_GetObject.png](diagrams/L1_ProcessView_GetObject.png)
 
 ## Nível 2
 ### Vista Lógica
@@ -123,12 +114,12 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 
 
 ### Vista de Implementação
-![N2-VL](diagramas/nivel2/N2-VI.png)
+![L2_ImplementationView.png](diagrams/L2_ImplementationView.png)!
 
 ### Vista Física
 
 Uma proposta muito simplificada.
-![N2-VL](diagramas/nivel2/N2-VF.png)
+![L2_Physical View.png](diagrams/L2_Physical View.png)!
 
 De facto, deve-se ter em consideração os requisitos não funcionais ["Physical Contraints"](Background.md#Physical_Constraints).
 
@@ -162,6 +153,7 @@ Alguns detalhes mais (se existissem pais do que 4 níveis, podia ser considerado
 Por agora, não existe necessidade de ser representada.
 
 ## Nível 3 (UI)
+
 ### Vista Lógica
 TBD
 
@@ -174,6 +166,7 @@ TBD
 ### Vista Física
 TBD
 
+
 ## Nível 3 (Back-end)
 ### Vista Lógica
 
@@ -183,92 +176,93 @@ Foram introduzidos conceitos como os *aggregates* e *value objects* que permitir
 
 DDD diagram
 
-A forma final da aplicação utiliza a arquitetura **Onion** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
-O diagrama de classes apresenta-se dividido em 4 camadas, **infrastructure**, **interface adapters**, **use case services** e **domain**, sendo a infrastructure a mais exterior e a domain a mais interior, representado na seguinte imagem.
+A forma final da aplicação utiliza a arquitetura ***Onion*** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
+O diagrama de classes apresenta-se dividido em 4 camadas, ***infrastructure***, ***interface adapters***, ***use case services*** e ***domain***, sendo a *infrastructure* a mais exterior e o *domain* a mais interior, representado na seguinte imagem.
 
 Class Diagram
 
 ![class-diagram](diagrams/class-diagram-general.png)
 
 ### Vista de Processos
-TBD
 
 Seguindo a estruturação apresentada na vista lógica é possível construir a **sequência de processos que serão a base de funcionamento para a implementação das user stories**. 
 
+![sd_us001](diagrams/general%20diagram%20SD.png)
+
 Aplicando a estrutura do diagrama de sequência podemos concluir que segue um padrão comum para todas as **user stories** da aplicação.
-Desta forma, há um pedido http direccionado ao **REST controller** que invoca um service, específico para cada caso de uso, onde a lógica de negócio será aplicada. Daqui será invocado o repositório do respetivo agregado envolvido, que será responsável pela comunicação com a persistência, e mediante o tipo de pedido adicionar ou obter a informação pretendida.
+Desta forma, há um pedido http direccionado ao ***REST controller*** que invoca um ***service***, específico para cada caso de uso, onde a lógica de negócio será aplicada. Daqui será invocado o **repositório** do respetivo agregado envolvido, que será responsável pela comunicação com a persistência, e mediante o tipo de pedido adicionar ou obter a informação pretendida.
 
-Entre cada uma destas etapas serão invocados **assemblers** cuja finalidade é mapear os dados com o objectivo de proteger e encapsular a informação proveniente de camadas diferentes. Isto permite-nos respeitar os princípios do encapsulamento e tornar a aplicação escalável.
+Entre cada uma destas etapas serão invocados ***assemblers*** cuja finalidade é mapear os dados com o objectivo de proteger e encapsular a informação proveniente de camadas diferentes. Isto permite-nos respeitar os princípios do encapsulamento e tornar a aplicação escalável.
 
-Esta arquitetura garante que o **single responsibility principle** é respeitado.
+Esta arquitetura garante que o ***single responsibility principle*** é respeitado.
+
+Na seguinte lista serão descritas as características específicas de cada tipo de diagrama
+
+#### 1) GET HTTP request example
+
+#### US110 - Get Category list
+
+Nos **pedidos http - Get** o repositório comunica com o repositório JPA para obter todos os dados relativos à user story, neste caso às categorias, converte cada objecto de JPA para objecto de domínio e adiciona a uma lista. Posteriormente essa lista é convertida para um DTO da lista e devolvido ao ***controller*** 
+
+![sd_us110](diagrams/SD/SD_US110_GetCategoryList.png)
+
+______
+
+#### 2) POST HTTP request example
+
+#### US010 - Create Family and set Administrator
 
 
-Sequence diagram 
 
-```puml
-@startuml
+![sd_us010](diagrams/SD/SD_US010_CreateFamilyAndSetAdmin.png)
 
-autonumber
 
-participant ": IController" as controller <<interface>>
-participant ": InputDTOAssembler" as inputDto
-participant ": IService" as service <<interface>>
-participant ": DTODomainAssembler" as dtoDomain
-participant "entity\n : Entity" as entity
-participant ": IRepository" as repository <<interface>>
-participant ": DataDomainAssembler" as dataDomain
-participant "savedEntity\n : Entity" as savedEntity
-participant ": IRepositoryJPA" as repositoryJPA <<interface>>
+______
 
--> controller : Request(requestBody)
-activate controller
+#### 3) PERSON
 
-ref over controller, inputDto
-Assemble ExternalDTO to InputDTO
-end
+#### US101 - Add family member
 
-controller -> service : createEntity(inputEntityDTO)
-activate service
+![sd_us101](diagrams/SD/SD_US101_AddFamilyMember.png)
 
-ref over service, dtoDomain
-Assemble InputDTO to Value Objects
-end
+#### US150 - Get profile information
 
-service -> entity ** : create(valueObjects)
+![sd_us150](diagrams/SD/SD_US150_GetProfileInformation.png)
 
-service -> repository : add(entity)
-activate repository
+#### US151 - Add email
 
-ref over repository, dataDomain
-Assemble Entity to EntityJPA
-end
+![sd_us151](diagrams/SD/SD_US151_AddEmail.png)
 
-repository -> repositoryJPA : save(entityJPA)
-activate repositoryJPA
-return savedEntityJPA
+______
 
-ref over repository, dataDomain
-Assemble EntityJPA to Value Objects
-end
+#### 4) Account 
 
-repository --> savedEntity ** : create(valueObjects)
+Todas as Accounts seguem a mesma forma de criação variando apenas o OwnerID, podendo ser familyID/personID na criação da Cash Account ou personID na criação nos restantes tipos de conta.
+Para as Account de person, os diferentes tipos de Accounts são criadas com a selecção do respectivo AccountType, como se encontra presente no diagrama das Factory 1 e 2.
 
-return savedEntity
 
-ref over service, dtoDomain
-Assemble Entity to OutputDTO
-end
+#### US120 - Create **Family** Cash Account
 
-return outputEntityDTO
+![sd_us120](diagrams/SD/SD_US120_CreateFamilyCashAccount.png)
 
-ref over controller, inputDto
-Add Links to OutputDTO
-end
+#### US170,171,172,173 - Create **Person**'s Cash, Bank, BankSavings and Credit Accounts
 
-return ResponseEntity\n(outputEntityDTO, HttpStatus)
+![sd_us17X](diagrams/SD/SD_US170:171:172:173_CreateAccount.png)
 
-@enduml
-```
+#### Account Factory 1 (sem accountID)
+
+
+
+![sd_factory_1](diagrams/SD/SD_extra_AccountFactory_1.png)
+
+#### Account Factory 2 (com accountID)
+
+![sd_factory_2](diagrams/SD/SD_extra_AccountFactory_2.png)
+
+#### US135,185,188 - Check balance (of any Account)
+
+![sd_us135](diagrams/SD/SD_US135:185:188_CheckBalance.png)
+
 
 ### Vista de Implementação
 
