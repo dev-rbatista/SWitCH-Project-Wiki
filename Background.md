@@ -76,10 +76,11 @@ Nesta edição do SWitCH; teremos a colaboração de product owners de diversas 
 25. US188 As a parent, I want to check the balance of one of my children’s cash account.
 
 ![Use Case Diagram - System Manager](./diagrams/UseCaseDiagramSM.png)
-
+___
 ![Use Case Diagram - Family Administrator](./diagrams/UseCaseDiagramFA.png)
-
+___
 ![Use Case Diagram - Family Member](./diagrams/UseCaseDiagramFM.png)
+___
 
 #### Quality attributes
 Os atributos de qualidade são categorizados e sistematizados segundo o modelo [FURPS+](https://en.wikipedia.org/wiki/FURPS).
