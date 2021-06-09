@@ -286,7 +286,34 @@ O repositório CRUD irá adicionar a informação contida nos Objetos de Dados J
 ![repo](https://i.imgur.com/2fHdjOO.png)
 
 ### Vista de Implementação
-TBD
+A adição/recolha de informação à base de dados é da inteira responsabilidade dos RepositóriosJPA (_CRUD Repositories_). Os Objetos de Dados JPA apenas são manipulados por estes repositórios, sendo o único envolvimento por outras classes a sua tradução de/para domínio por parte dos DataDomainAssemblers.
+Não há nenhum contacto com Objetos JPA e classes na camada de Serviço:
+
+![imp](https://i.imgur.com/mZDVBAV.png)
+
+
+
 
 ### Vista Física
-TBD
+A implementação da aplicação usa duas bases de dados diferentes: POSTGRES para produção e H2 para testes. Esta distinção é obtida através de dois ficheiros de propriedades distintos, que são indicados através duma tag _TestPropertySource_:
+
+```java
+@SpringBootApplication
+@TestPropertySource(locations = "classpath:application-test.properties")
+public class
+FFMSpringBootApplication {...}
+```
+
+A base de dados POTSGRES está de momento alojada num servidor Amazon Web Service (AWS) 
+
+```java
+spring.jpa.database=POSTGRESQL
+spring.datasource.platform=postgres
+spring.datasource.url=jdbc:postgresql://ffmapp.c5zejpkmwdl8.eu-west-3.rds.amazonaws.com:5432/ffmapp
+spring.datasource.username=g3
+spring.datasource.password=*********
+spring.jpa.show-sql=true
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+```
