@@ -245,7 +245,7 @@ Esta arquitetura garante que o ***single responsibility principle*** é respeita
 
 Na seguinte lista serão descritas as características específicas de cada tipo de diagrama
 
-#### 1) GET HTTP request example
+#### 1) GET HTTP request 
 
 #### US110 - Get Category list
 
@@ -255,34 +255,28 @@ Nos **pedidos http - Get** o repositório comunica com o repositório JPA para o
 
 ______
 
-#### 2) POST HTTP request example
+#### 2) POST HTTP request com dois agregados
 
 #### US010 - Create Family and set Administrator
 
+Nos **pedidos http - Post** o ***service*** é responsável pela criação de dois objectos do domínio, ***Admin*** e ***Family***, através dos ***value objects*** provenientes dos respectivos *assemblers*. Em primeiro adiciona um dos objectos (*admin*) ao seu repositório e posteriormente o outro objecto (*family*) ao repositório respectivo. Através da devida anotação no método do *service* (*@transactional*) garantimos que caso haja alguma falha no processo, nenhum dos objectos é adicionado ao seu repositório.
 
-
-![sd_us010](diagrams/SD/SD_US010_CreateFamilyAndSetAdmin.png)
+![sd_us010](diagrams/SD/SD_US010_CreateAFamilyAndSetAdministrator.png)
 
 
 ______
 
-#### 3) PERSON
-
-#### US101 - Add family member
-
-![sd_us101](diagrams/SD/SD_US101_AddFamilyMember.png)
-
-#### US150 - Get profile information
-
-![sd_us150](diagrams/SD/SD_US150_GetProfileInformation.png)
+#### 3) POST HTTP request com verificação
 
 #### US151 - Add email
+
+No caso de ser necessário verificação da existência de um *value object* (email), o *service* tem o papel de fazer o pedido ao repositório do objecto de domínio (*person*) onde o *value object* vai ser adiconado, fazer a verificação da sua existência. Em caso negativo, adiciona à lista desses *value objects* (*email list*), existente no objecto de domínio *person*. Em caso positivo, rejeita a acção e comunica a excepção *email already registered* para o *controller*.
 
 ![sd_us151](diagrams/SD/SD_US151_AddEmail.png)
 
 ______
 
-#### 4) Account 
+#### 4) Abstração das Account 
 
 Todas as Accounts seguem a mesma forma de criação variando apenas o OwnerID, podendo ser familyID/personID na criação da Cash Account ou personID na criação nos restantes tipos de conta.
 Para as Account de person, os diferentes tipos de Accounts são criadas com a selecção do respectivo AccountType, como se encontra presente no diagrama das Factory 1 e 2.
@@ -296,9 +290,9 @@ Para as Account de person, os diferentes tipos de Accounts são criadas com a se
 
 ![sd_us17X](diagrams/SD/SD_US170:171:172:173_CreateAccount.png)
 
+Como é a persistência que cria o ID's para as accounts o **diagrama Factory 1**  é utlizado para obter as account quando ainda não foi atribuido ID pela persistência enquanto que o **diagrama Factory 2** é utilizado para obter as accounts quando já lhes foi atribuido o ID.
+
 #### Account Factory 1 (sem accountID)
-
-
 
 ![sd_factory_1](diagrams/SD/SD_extra_AccountFactory_1.png)
 
@@ -306,15 +300,10 @@ Para as Account de person, os diferentes tipos de Accounts são criadas com a se
 
 ![sd_factory_2](diagrams/SD/SD_extra_AccountFactory_2.png)
 
-#### US135,185,188 - Check balance (of any Account)
-
-![sd_us135](diagrams/SD/SD_US135:185:188_CheckBalance.png)
-
 
 ### Vista de Implementação
 
 
- 
 
 ### Vista Física
 TBD
