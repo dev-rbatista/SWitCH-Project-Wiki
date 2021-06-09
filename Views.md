@@ -3,21 +3,28 @@
 	- [Introduction](#introduction)
 	- [Nível 1](#nível-1)
 		- [Vista Lógica](#vista-lógica)
-
-  ![img](diagramas/nivel1/LogicViewBusinessLogic-Business_Logic_View___SP01.svg)
-
-- [Vista de Processos](#vista-de-processos)
-  - [SSD US010](#ssd-us1)
-	
-
-  - [SSD US101](#ssd-us2)
-  - [SSD US104](#ssd-us3)
-  - [SSD US105](#ssd-us4)
-  - [SSD US150](#ssd-us5)
-  - [SSD US003](#ssd-us5)
-  - [SSD US111v2](#ssd-us5)
-  - [SSD US108](#ssd-us5)
-  - [(outros SSD arquiteturalmente relevantes)](#outros-ssd-arquiteturalmente-relevantes)
+		- [Vista de Processos](#vista-de-processos)
+		- [SSD US001](#ssd-us001)
+		- [SSD US002](#ssd-us002)
+		- [SSD US003](#ssd-us003)
+		- [SSD US101](#ssd-us0101)
+		- [SSD US104](#ssd-us104)
+		- [SSD US105](#ssd-us105)
+		- [SSD US106](#ssd-us106)
+		- [SSD US110](#ssd-us110)
+		- [SSD US111](#ssd-us111)
+		- [SSD US120](#ssd-us120)
+		- [SSD US130](#ssd-us130)
+		- [SSD US135](#ssd-us135)
+		- [SSD US150](#ssd-us150)
+		- [SSD US151](#ssd-us151)
+		- [SSD US170/171/172/173](#ssd-us170/171/172/173)
+		- [SSD US180](#ssd-us180)
+		- [SSD US181](#ssd-us181)
+		- [SSD US185](#ssd-us185)
+		- [SSD US186](#ssd-us186)
+		- [SSD US188](#ssd-us188)
+		(#outros-ssd-arquiteturalmente-relevantes)
 	- [Nível 2](#nível-2)
 		- [Vista Lógica](#vista-lógica-1)
 		- [Vista de Processos](#vista-de-processos-1)
@@ -40,6 +47,9 @@
 		- [Vista de Processos](#vista-de-processos-5)
 		- [Vista de Implementação](#vista-de-implementação-4)
 		- [Vista Física](#vista-física-4)
+
+
+  ![img](diagramas/nivel1/LogicViewBusinessLogic-Business_Logic_View___SP01.svg)
 
 # Views
 
@@ -73,37 +83,74 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ![img.png](Images/img.png)
 
 ### Vista de Processos
-#### SSD US1
+#### SSD US001
 
-```` puml
+![ssd-001](diagrams/createStandardCategory_SSD.png)
 
-    autonumber
-    title createStandardCategory SSD
-    actor "System Manager" as systemManager
-    participant "System" as system
+#### SSD US002
+![ssd-002](diagrams/Get_Standard_Category_Tree_SSD.png)
 
-    activate systemManager
-    systemManager -> system: create a Standard Category
-    activate system
-    systemManager -> system: input required data
-    system --> systemManager: inform success
-    deactivate system
+#### SSD US003
+![ssd-003](diagrams/Get_Standard_Category_Tree_extended_from_complementary_system_SSD.png)
 
-@endpuml
-````
+#### SSD US010
+![ssd-010](diagrams/Create_Family_and_Set_Administrator.png)
 
-![N1-VP-US1](diagramas/nivel1/N1-VP-US1.png)
+#### SSD US101
+![ssd-101](diagrams/Add_a_Family_Member.png)
 
-#### SSD US2
-![N1-VP-US2](diagramas/nivel1/N1-VP-US2.png)
+#### SSD US104
+![ssd-104](diagrams/Get_Family_Members_and_their_Relations_SSD.png)
 
-#### (outros SSD arquiteturalmente relevantes)
-[...]
+#### SSD US105
+![ssd-105](diagrams/Create_Relation.png)
+
+#### SSD US106
+![ssd-106](diagrams/Change_Relation.png)
+
+#### SSD US110
+![ssd-110](diagrams/Get_family_s_categories_list.png)
+
+#### SSD US111
+![ssd-110](diagrams/Add_Category_to_Family_Tree.png)
+
+#### SSD US120
+![ssd-120](diagrams/Create_Family_Cash_Account.png)
+
+#### SSD US130
+![ssd-130](diagrams/Transfer_to_Personal_Cash_Account.png)
+
+#### SSD US135
+![ssd-135](diagrams/Check_Family_or_Family_Member_Cash_Account.png)
+
+#### SSD US150
+![ssd-150](diagrams/Get_my_profile_information.png)
+
+#### SSD US151
+![ssd-151](diagrams/Add_an_Email_Address.png)
+
+#### SSD US170/171/172/173
+![ssd-170/171/172/173](diagrams/Create_Account.png)
+
+#### SSD US180
+![ssd-180](diagrams/Transfer_Money_between_Family_Members.png)
+
+#### SSD US181
+![ssd-181](diagrams/Register_Payment_with_My_Cash_Account.png)
+
+#### SSD US185
+![ssd-185](diagrams/Check_Account_Balance.png)
+
+#### SSD US186
+![ssd-186](diagrams/Get_list_Of_Movements_Between_Dates.png)
+
+#### SSD US185
+![ssd-188](diagrams/Check_Children_Cash_Account_Balance.png)
 
 ## Nível 2
 ### Vista Lógica
 
-![N2-VL](diagramas/nivel2/N2-VL.png)
+![img_1.png](Images/img_1.png)
 
 ### Vista de Processos
 
@@ -119,7 +166,7 @@ TBD
 ### Vista Física
 
 Uma proposta muito simplificada.
-![N2-VL](diagramas/nivel2/N2-VF.png)
+![L2_Physical View.png](diagrams/L2_Physical View.png)!
 
 De facto, deve-se ter em consideração os requisitos não funcionais ["Physical Contraints"](Background.md#Physical_Constraints).
 
