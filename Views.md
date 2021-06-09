@@ -103,7 +103,7 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ## Nível 2
 ### Vista Lógica
 
-![N2-VL](diagramas/nivel2/N2-VL.png)
+![img_1.png](Images/img_1.png)
 
 ### Vista de Processos
 
