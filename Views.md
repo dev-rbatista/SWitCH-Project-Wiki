@@ -6,25 +6,7 @@
 		- [Vista de Processos](#vista-de-processos)
 		- [SSD US001](#ssd-us001)
 		- [SSD US002](#ssd-us002)
-		- [SSD US003](#ssd-us003)
-		- [SSD US101](#ssd-us0101)
-		- [SSD US104](#ssd-us104)
-		- [SSD US105](#ssd-us105)
-		- [SSD US106](#ssd-us106)
-		- [SSD US110](#ssd-us110)
-		- [SSD US111](#ssd-us111)
-		- [SSD US120](#ssd-us120)
-		- [SSD US130](#ssd-us130)
-		- [SSD US135](#ssd-us135)
-		- [SSD US150](#ssd-us150)
-		- [SSD US151](#ssd-us151)
-		- [SSD US170/171/172/173](#ssd-us170/171/172/173)
-		- [SSD US180](#ssd-us180)
-		- [SSD US181](#ssd-us181)
-		- [SSD US185](#ssd-us185)
-		- [SSD US186](#ssd-us186)
-		- [SSD US188](#ssd-us188)
-		(#outros-ssd-arquiteturalmente-relevantes)
+
 	- [Nível 2](#nível-2)
 		- [Vista Lógica](#vista-lógica-1)
 		- [Vista de Processos](#vista-de-processos-1)
@@ -110,7 +92,8 @@ TBD
 ### Vista Física
 
 Uma proposta muito simplificada.
-![L2_Physical View.png](diagrams/L2_Physical View.png)!
+
+![L2_Physical-View.png](diagrams/L2_Physical_View.png)
 
 De facto, deve-se ter em consideração os requisitos não funcionais ["Physical Contraints"](Background.md#Physical_Constraints).
 
