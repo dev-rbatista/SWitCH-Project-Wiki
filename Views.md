@@ -119,7 +119,7 @@ TBD
 ### Vista Física
 
 Uma proposta muito simplificada.
-![N2-VL](diagramas/nivel2/N2-VF.png)
+![L2_Physical View.png](diagrams/L2_Physical View.png)!
 
 De facto, deve-se ter em consideração os requisitos não funcionais ["Physical Contraints"](Background.md#Physical_Constraints).
 
