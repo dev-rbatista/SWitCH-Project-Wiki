@@ -6,25 +6,7 @@
 		- [Vista de Processos](#vista-de-processos)
 		- [SSD US001](#ssd-us001)
 		- [SSD US002](#ssd-us002)
-		- [SSD US003](#ssd-us003)
-		- [SSD US101](#ssd-us0101)
-		- [SSD US104](#ssd-us104)
-		- [SSD US105](#ssd-us105)
-		- [SSD US106](#ssd-us106)
-		- [SSD US110](#ssd-us110)
-		- [SSD US111](#ssd-us111)
-		- [SSD US120](#ssd-us120)
-		- [SSD US130](#ssd-us130)
-		- [SSD US135](#ssd-us135)
-		- [SSD US150](#ssd-us150)
-		- [SSD US151](#ssd-us151)
-		- [SSD US170/171/172/173](#ssd-us170/171/172/173)
-		- [SSD US180](#ssd-us180)
-		- [SSD US181](#ssd-us181)
-		- [SSD US185](#ssd-us185)
-		- [SSD US186](#ssd-us186)
-		- [SSD US188](#ssd-us188)
-		(#outros-ssd-arquiteturalmente-relevantes)
+
 	- [Nível 2](#nível-2)
 		- [Vista Lógica](#vista-lógica-1)
 		- [Vista de Processos](#vista-de-processos-1)
@@ -94,15 +76,24 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ## Nível 2
 ### Vista Lógica
 
-![img_1.png](Images/img_1.png)
+![LogicView_Nível2.png](diagrams/LogicView_Nível2.png)
 
 ### Vista de Processos
 
-#### SSD US13 (Porquê esta US?)
-TBD
+#### SSD US Criar/Adicionar um recurso
 
-#### (outros SSD arquiteturalmente relevantes)
-[...]
+![ProcessView_Nível2_AddOrCreate.png](Process%20View_Nível2_AddOrCreate.png)
+
+
+#### SSD US Obter um recurso
+
+![ProcessView_Nível2_Get.png](diagrams/ProcessView_Nível2_Get.png)
+
+#### SSD US Obter um recurso com API Externa (Standard Categories)
+
+![ProcessView_Nível2_Get_External.png](diagrams/ProcessView_Nível2_Get_External.png)
+
+
 
 ### Vista de Implementação
 ![L2_ImplementationView.png](diagrams/L2_ImplementationView.png)!
@@ -110,7 +101,8 @@ TBD
 ### Vista Física
 
 Uma proposta muito simplificada.
-![L2_Physical View.png](diagrams/L2_Physical View.png)!
+
+![L2_Physical-View.png](diagrams/L2_Physical_View.png)
 
 De facto, deve-se ter em consideração os requisitos não funcionais ["Physical Contraints"](Background.md#Physical_Constraints).
 
@@ -165,14 +157,10 @@ No desenvolvimento da aplicação foram aplicados vários padrões de design de 
 Inicialmente a representação do modelo lógico seguiu a arquitetura **DDD**, domain-driven design, como forma introdutória para a reestruturação e nova aplicação do modelo de domínio.
 Foram introduzidos conceitos como os *aggregates* e *value objects* que permitiram iniciar a reengenharia da aplicação e criar as bases para a utilização da arquitetura **Onion**.
 
-DDD diagram
-
 A forma final da aplicação utiliza a arquitetura ***Onion*** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
 O diagrama de classes apresenta-se dividido em 4 camadas, ***infrastructure***, ***interface adapters***, ***use case services*** e ***domain***, sendo a *infrastructure* a mais exterior e o *domain* a mais interior, representado na seguinte imagem.
 
-Class Diagram
-
-![class-diagram](diagrams/class-diagram-general.png)
+![logic-view](diagrams/logic-view-backend.png)
 
 ### Vista de Processos
 
@@ -189,7 +177,7 @@ Esta arquitetura garante que o ***single responsibility principle*** é respeita
 
 Na seguinte lista serão descritas as características específicas de cada tipo de diagrama
 
-#### 1) GET HTTP request example
+#### 1) GET HTTP request 
 
 #### US110 - Get Category list
 
@@ -199,34 +187,28 @@ Nos **pedidos http - Get** o repositório comunica com o repositório JPA para o
 
 ______
 
-#### 2) POST HTTP request example
+#### 2) POST HTTP request com dois agregados
 
 #### US010 - Create Family and set Administrator
 
+Nos **pedidos http - Post** o ***service*** é responsável pela criação de dois objectos do domínio, ***Admin*** e ***Family***, através dos ***value objects*** provenientes dos respectivos *assemblers*. Em primeiro adiciona um dos objectos (*admin*) ao seu repositório e posteriormente o outro objecto (*family*) ao repositório respectivo. Através da devida anotação no método do *service* (*@transactional*) garantimos que caso haja alguma falha no processo, nenhum dos objectos é adicionado ao seu repositório.
 
-
-![sd_us010](diagrams/SD/SD_US010_CreateFamilyAndSetAdmin.png)
+![sd_us010](diagrams/SD/SD_US010_CreateAFamilyAndSetAdministrator.png)
 
 
 ______
 
-#### 3) PERSON
-
-#### US101 - Add family member
-
-![sd_us101](diagrams/SD/SD_US101_AddFamilyMember.png)
-
-#### US150 - Get profile information
-
-![sd_us150](diagrams/SD/SD_US150_GetProfileInformation.png)
+#### 3) POST HTTP request com verificação
 
 #### US151 - Add email
+
+No caso de ser necessário verificação da existência de um *value object* (email), o *service* tem o papel de fazer o pedido ao repositório do objecto de domínio (*person*) onde o *value object* vai ser adiconado, fazer a verificação da sua existência. Em caso negativo, adiciona à lista desses *value objects* (*email list*), existente no objecto de domínio *person*. Em caso positivo, rejeita a acção e comunica a excepção *email already registered* para o *controller*.
 
 ![sd_us151](diagrams/SD/SD_US151_AddEmail.png)
 
 ______
 
-#### 4) Account 
+#### 4) Abstração das Account 
 
 Todas as Accounts seguem a mesma forma de criação variando apenas o OwnerID, podendo ser familyID/personID na criação da Cash Account ou personID na criação nos restantes tipos de conta.
 Para as Account de person, os diferentes tipos de Accounts são criadas com a selecção do respectivo AccountType, como se encontra presente no diagrama das Factory 1 e 2.
@@ -240,9 +222,9 @@ Para as Account de person, os diferentes tipos de Accounts são criadas com a se
 
 ![sd_us17X](diagrams/SD/SD_US170:171:172:173_CreateAccount.png)
 
+Como é a persistência que cria o ID's para as accounts o **diagrama Factory 1**  é utlizado para obter as account quando ainda não foi atribuido ID pela persistência enquanto que o **diagrama Factory 2** é utilizado para obter as accounts quando já lhes foi atribuido o ID.
+
 #### Account Factory 1 (sem accountID)
-
-
 
 ![sd_factory_1](diagrams/SD/SD_extra_AccountFactory_1.png)
 
@@ -250,18 +232,13 @@ Para as Account de person, os diferentes tipos de Accounts são criadas com a se
 
 ![sd_factory_2](diagrams/SD/SD_extra_AccountFactory_2.png)
 
-#### US135,185,188 - Check balance (of any Account)
-
-![sd_us135](diagrams/SD/SD_US135:185:188_CheckBalance.png)
-
 
 ### Vista de Implementação
 
+Tal como referido na **vista lógica** a implementação de todas as **user stories** segue uma estrutura concêntrica subdivida em **infrastructure**, **interface adapters**, **use case services** e **domain** com as seguintes dependências.
 
- 
+![class-diagram](diagrams/class-diagram-general.png)
 
-### Vista Física
-TBD
 
 ## Nível 3 (Persistência)
 ### Vista Lógica
