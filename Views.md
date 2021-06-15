@@ -1,4 +1,4 @@
-	## Contents
+## Contents
 - [Views](#views)
 	- [Introduction](#introduction)
 	- [Nível 1](#nível-1)
@@ -240,8 +240,8 @@ Tal como referido na **vista lógica** a implementação de todas as **user stor
 ![class-diagram](diagrams/class-diagram-general.png)
 
 
-## Nível 3 (Persistência)
-### Vista Lógica
+
+### Vista de Persistência
 
 Para conseguir a persistência de dados na aplicação, foi utilizado um modelo em espelho dos objetos de domínio. 
 
@@ -250,19 +250,19 @@ Cada Objeto de Domínio que se pretende guardar em persistência tem um Objeto d
 
 ![mirror](https://imgur.com/9Of4KB4.jpg)
 
-### Vista de Processos
+
 Assim que os Objetos de Domínio forem convertidos para Objetos de Dados JPA (usando _Assemblers_ dedicados ao efeito em classes _Repository_ de domínio), serão adicionados à base de dados usando _interfaces_ de Repositórios CRUD adequados ao seu tipo.
 O repositório CRUD irá adicionar a informação contida nos Objetos de Dados JPA à base de dados, devolvendo uma cópia do objeto idêntica ou, em alguns casos, com um ID gerado automaticamente aquando da adição. Esta sequencia de processos está representada na imagem seguinte, uma secção do SD da US120 - _Create Family Cash Account_:
 
 ![repo](https://i.imgur.com/2fHdjOO.png)
 
-### Vista de Implementação
 A adição/recolha de informação à base de dados é da inteira responsabilidade dos RepositóriosJPA (_CRUD Repositories_). Os Objetos de Dados JPA apenas são manipulados por estes repositórios, sendo o único envolvimento por outras classes a sua tradução de/para domínio por parte dos DataDomainAssemblers.
 Não há nenhum contacto com Objetos JPA e classes na camada de Serviço:
 
 ![imp](https://i.imgur.com/mZDVBAV.png)
 
 
+## Nível 3 (Base de Dados)
 
 
 ### Vista Física
