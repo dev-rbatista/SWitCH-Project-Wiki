@@ -88,7 +88,7 @@ Os atributos de qualidade são categorizados e sistematizados segundo o modelo [
 ##### Funcionalidade
 1. Cada sistema só poderá aceder aos dados que necessita de conhecer.
 2. Deve ser auditada e verificada a integridade da informação a que os sistemas acedem.
-3. Com vista à necessidade de saber e necessidade de conhecer, toda a informação deve estar protegida de acessos indevidos. Ou seja, o princípio de minimização de acesso ao que é essencial para cada utilizador/aplicação, criação de túneis para transferência de informação, avaliação da integridade de dados e aplicações, e encriptação/minimização dos dados.
+3. A informação deve estar protegida de acessos indevidos.
 4. É necessário ter especial atenção com a privacidade e proteção de dados à luz do RGPD.
 
 ##### Usabilidade
