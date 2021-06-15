@@ -86,13 +86,10 @@ ___
 Os atributos de qualidade são categorizados e sistematizados segundo o modelo [FURPS+](https://en.wikipedia.org/wiki/FURPS).
 
 ##### Funcionalidade
-1. Cada sistema só poderá aceder aos dados que necessita de conhecer.
-2. Deve ser auditada e verificada a integridade da informação a que os sistemas acedem.
-3. A informação deve estar protegida de acessos indevidos.
-4. É necessário ter especial atenção com a privacidade e proteção de dados à luz do RGPD.
+n/a
 
 ##### Usabilidade
-5.  No âmbito do projeto atual, a administração de utilizadores pode ser efetuada diretamente na base de dados não sendo necessário um módulo de gestão de utilizadores.
+n/a
 
 ##### Confiabilidade (Reliability)
 n/a
@@ -123,7 +120,7 @@ n/a
 13. Segundo a us003 a nossa aplicação deve consumir dados externos relativos às *Standard Categories* de um ou outro sistema selecionado através de ficheiro de configuração. Da mesma forma, a aplicação deve fornecer um API que disponibiliza esses mesmos dados a outro sistema.
 
 ##### Physical constraints
-18. Existem dois servidores virtuais nos quais estão alojados a aplicação e base de dados, respectivamente.
+18. Há servidores virtuais do ISEP onde deverão estar alojadas a aplicação, base de dados e front end, respectivamente.
 
 ## Solution Background
 > The sub-parts of this section provide a description of why the architecture is the way that it is, and a convincing argument that the architecture is the right one to satisfy the behavioral and quality attribute goals levied upon it.
