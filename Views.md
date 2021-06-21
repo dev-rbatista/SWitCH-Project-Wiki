@@ -106,47 +106,15 @@ Uma proposta muito simplificada.
 
 De facto, deve-se ter em consideração os requisitos não funcionais ["Physical Contraints"](Background.md#Physical_Constraints).
 
-## Nível 3 (MDR)
-### Vista Lógica
-Alternativa baseada numa arquitetura por camadas sobrepostas:
-![N3-VL-MDR-alt1](diagramas/nivel3/MDR/N3-VL-MDR-alt1.png)
-
-Alternativa baseada numa arquitetura por camadas concêntricas (Onion):
-![N3-VL-MDR-alt2](diagramas/nivel3/MDR/N3-VL-MDR-alt2.png)
-
-A alternativa Onion será a adotada.
-
-### Vista de Processos
-
-#### SD US01
-TBD
-
-#### (outros SSD arquiteturalmente relevantes)
-[...]
-
-### Vista de Implementação
-![N3-VI-MDR-alt2](diagramas/nivel3/MDR/N3-VI-MDR-alt2.png)
-
-Alguns detalhes mais (se existissem pais do que 4 níveis, podia ser considerado nível 4):
-
-![N3.1-VI-MDR-alt2](diagramas/nivel3/MDR/N3.1-VI-MDR-alt2.png)
-
-### Vista Física
-
-Por agora, não existe necessidade de ser representada.
-
 ## Nível 3 (UI)
 
 ### Vista Lógica
 TBD
 
 ### Vista de Processos
-TBD
+![process-view-UI](diagrams/ProcessView-UI.png)
 
 ### Vista de Implementação
-TBD
-
-### Vista Física
 TBD
 
 
@@ -160,7 +128,7 @@ Foram introduzidos conceitos como os *aggregates* e *value objects* que permitir
 A forma final da aplicação utiliza a arquitetura ***Onion*** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
 O diagrama de classes apresenta-se dividido em 4 camadas, ***infrastructure***, ***interface adapters***, ***use case services*** e ***domain***, sendo a *infrastructure* a mais exterior e o *domain* a mais interior, representado na seguinte imagem.
 
-![logic-view](diagrams/logic-view-backend.png)
+![logic-view](diagrams/LogicView-lvl3.png)
 
 ### Vista de Processos
 
@@ -220,7 +188,7 @@ Para as Account de person, os diferentes tipos de Accounts são criadas com a se
 
 #### US170,171,172,173 - Create **Person**'s Cash, Bank, BankSavings and Credit Accounts
 
-![sd_us17X](diagrams/SD/SD_US170:171:172:173_CreateAccount.png)
+![sd_us17X](diagrams/SD/SD_US170_171_172_173_CreateAccount.png)
 
 Como é a persistência que cria o ID's para as accounts o **diagrama Factory 1**  é utlizado para obter as account quando ainda não foi atribuido ID pela persistência enquanto que o **diagrama Factory 2** é utilizado para obter as accounts quando já lhes foi atribuido o ID.
 
@@ -237,7 +205,7 @@ Como é a persistência que cria o ID's para as accounts o **diagrama Factory 1*
 
 Tal como referido na **vista lógica** a implementação de todas as **user stories** segue uma estrutura concêntrica subdivida em **infrastructure**, **interface adapters**, **use case services** e **domain** com as seguintes dependências.
 
-![class-diagram](diagrams/class-diagram-general.png)
+![class-diagram](diagrams/implementation-diagram.png)
 
 
 
