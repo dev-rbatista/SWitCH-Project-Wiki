@@ -73,6 +73,10 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 
 ![L1_ProcessView_GetObject.png](diagrams/L1_ProcessView_GetObject.png)
 
+#### Obter Objecto Sistema Externo
+
+![L1_ProcessView_GetObjectExternalSystem.png](diagrams/L1_ProcessView_GetObjectExternalSystem.png)
+
 ## Nível 2
 ### Vista Lógica
 
