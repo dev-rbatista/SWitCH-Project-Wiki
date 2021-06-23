@@ -58,8 +58,7 @@ Nesta edição do SWitCH; teremos a colaboração de product owners de diversas 
 8. US105 As a family administrator, I want to create a relation between two family members.
 9. US106 As a family administrator, I want to change the relation between two family members.
 10. US110 As a family administrator, I want to get the list of the categories on the family’s category tree.
-
-~~11. US111 As a family administrator, I want to add a category to the family’s category tree.~~
+11. ~~US111 As a family administrator, I want to add a category to the family’s category tree.~~
 11. US111v2 As a family administrator, I want to add a custom category to the family’s category tree "extended" from either external or internal standard categories.
 12. US120 As a family administrator, I want to create a family cash account.
 13. US130 As a family administrator, I want to transfer money from the family’s cash account to another family member’s cash account.
