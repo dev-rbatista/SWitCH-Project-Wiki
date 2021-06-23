@@ -58,7 +58,7 @@ Nesta edição do SWitCH; teremos a colaboração de product owners de diversas 
 8. US105 As a family administrator, I want to create a relation between two family members.
 9. US106 As a family administrator, I want to change the relation between two family members.
 10. US110 As a family administrator, I want to get the list of the categories on the family’s category tree.
-~~11. US111 As a family administrator, I want to add a category to the family’s category tree.~~
+11. ~~US111 As a family administrator, I want to add a category to the family’s category tree.~~
 11. US111v2 As a family administrator, I want to add a custom category to the family’s category tree "extended" from either external or internal standard categories.
 12. US120 As a family administrator, I want to create a family cash account.
 13. US130 As a family administrator, I want to transfer money from the family’s cash account to another family member’s cash account.
@@ -101,26 +101,26 @@ n/a
 n/a
 
 ##### Design constraints
-6. O sistema deve ser composto por uma aplicação web do tipo Single Page Application (SPA) que permite aos utilizadores autorizados aceder às diferentes funcionalidades da aplicação.
+1. O sistema deve ser composto por uma aplicação web do tipo Single Page Application (SPA) que permite aos utilizadores autorizados aceder às diferentes funcionalidades da aplicação.
 
-7.  Embora não esteja no âmbito atual do projeto, deve ser levado em conta na arquitetura da solução, a extensão futura com módulos exteriores.
+2.  Embora não esteja no âmbito atual do projeto, no futuro deve ser levada em conta a interação com APIs externas (instituições financeiras, serviços púbicos, entre outros).
 
-8. A aplicação deve utilizar DDD (Onion Architecture).
+3. A aplicação deve utilizar DDD e Onion Architecture.
 
-9. A aplicação deve ser RESTful.
+4. A aplicação deve ser RESTful.
 
-10. A aplicação deve ter arquitectura Client-Server centralizada, um sistema distribuído com front end (client) e back end (server)
+5. A aplicação deve ter arquitectura Client-Server.
 
 ##### Implementation constraints
-11. As linguagens de programação a ser utilizadas são o Javascript (na framework React) para front end e Java para back end.
+6. As linguagens de programação a ser utilizadas são o Javascript (na framework React) para front end e Java para back end.
 
-12. No back end, as frameworks a ser utilizadas são o Spring Boot e o JPA Hibernate. 
+7. No back end, as frameworks a ser utilizadas são o Spring Boot e o JPA Hibernate. 
 
 ##### Interface constraints
-13. Segundo a us003 a nossa aplicação deve consumir dados externos relativos às *Standard Categories* de um ou outro sistema selecionado através de ficheiro de configuração. Da mesma forma, a aplicação deve fornecer um API que disponibiliza esses mesmos dados a outro sistema.
+8. Segundo a us003 a nossa aplicação deve consumir dados externos relativos às *Standard Categories* de um ou outro sistema selecionado através de ficheiro de configuração. Da mesma forma, a aplicação deve fornecer um API que disponibiliza esses mesmos dados a outro sistema.
 
 ##### Physical constraints
-18. Há servidores virtuais do ISEP onde deverão estar alojadas a aplicação, base de dados e front end, respectivamente.
+9. Há servidores virtuais do ISEP onde deverão estar alojadas a aplicação, base de dados e front end.
 
 ## Solution Background
 > The sub-parts of this section provide a description of why the architecture is the way that it is, and a convincing argument that the architecture is the right one to satisfy the behavioral and quality attribute goals levied upon it.
@@ -132,10 +132,8 @@ Baseado nos requisitos não funcionais e restrições de design, serão adotadas
 
 - Client-Server;
 - Web Application, em que o frontend é desempenhado por uma SPA (Single Page Application);
-- SOA, porque os servidores (cf. anterior) deverão disponibilizar API, e particularmemte API para serem usadas na web, disponibilizados serviços para os clientes respetivos. Serão adotados os nível 1, 2 e 3 do [Modelo de Maturidade de Richardson](https://martinfowler.com/articles/richardsonMaturityModel.html) aplicado a REST;
+- Serão adotados os nível 1, 2 e 3 do [Modelo de Maturidade de Richardson](https://martinfowler.com/articles/richardsonMaturityModel.html) aplicado a REST;
 - Layered architecture, mais especificamente Onion Architecture, por razões académicas.
-
-Outras abordagens/estilos/padrões, como e.g. interligação entre aplicações baseado em mensagens-eventos foram desconsideradas para não violar os requisitos e restrições definidos, mas também por questões académicas.
 
 ### Analysis Results
 > This section describes the results of any quantitative or qualitative analyses that have been performed that provide evidence that the software architecture is fit for purpose. If an Architecture Tradeoff Analysis Method evaluation has been performed, it is included in the analysis sections of its final report. This section refers to the results of any other relevant trade studies, quantitative modeling, or other analysis results.
