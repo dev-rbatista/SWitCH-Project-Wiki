@@ -58,7 +58,7 @@ Nesta edição do SWitCH; teremos a colaboração de product owners de diversas 
 8. US105 As a family administrator, I want to create a relation between two family members.
 9. US106 As a family administrator, I want to change the relation between two family members.
 10. US110 As a family administrator, I want to get the list of the categories on the family’s category tree.
-~~11. US111 As a family administrator, I want to add a category to the family’s category tree.~~
+11. ~~US111 As a family administrator, I want to add a category to the family’s category tree.~~
 11. US111v2 As a family administrator, I want to add a custom category to the family’s category tree "extended" from either external or internal standard categories.
 12. US120 As a family administrator, I want to create a family cash account.
 13. US130 As a family administrator, I want to transfer money from the family’s cash account to another family member’s cash account.
@@ -86,13 +86,10 @@ ___
 Os atributos de qualidade são categorizados e sistematizados segundo o modelo [FURPS+](https://en.wikipedia.org/wiki/FURPS).
 
 ##### Funcionalidade
-1. Cada sistema só poderá aceder aos dados que necessita de conhecer.
-2. Deve ser auditada e verificada a integridade da informação a que os sistemas acedem.
-3. Com vista à necessidade de saber e necessidade de conhecer, toda a informação deve estar protegida de acessos indevidos. Ou seja, o princípio de minimização de acesso ao que é essencial para cada utilizador/aplicação, criação de túneis para transferência de informação, avaliação da integridade de dados e aplicações, e encriptação/minimização dos dados.
-4. É necessário ter especial atenção com a privacidade e proteção de dados à luz do RGPD.
+n/a
 
 ##### Usabilidade
-5.  No âmbito do projeto atual, a administração de utilizadores pode ser efetuada diretamente na base de dados não sendo necessário um módulo de gestão de utilizadores.
+n/a
 
 ##### Confiabilidade (Reliability)
 n/a
@@ -104,7 +101,7 @@ n/a
 n/a
 
 ##### Design constraints
-6. O sistema deve ser composto por uma aplicação web do tipo Single Page Application (SPA) que permite aos utilizadores autorizados aceder às diferentes funcionalidades da aplicação.
+1. O sistema deve ser composto por uma aplicação web do tipo Single Page Application (SPA) que permite aos utilizadores autorizados aceder às diferentes funcionalidades da aplicação.
 
 7.  Embora não esteja no âmbito atual do projeto, deve ser levado em conta na arquitetura da solução, a extensão futura com módulos exteriores.
 
@@ -123,7 +120,7 @@ n/a
 13. Segundo a us003 a nossa aplicação deve consumir dados externos relativos às *Standard Categories* de um ou outro sistema selecionado através de ficheiro de configuração. Da mesma forma, a aplicação deve fornecer um API que disponibiliza esses mesmos dados a outro sistema.
 
 ##### Physical constraints
-18. Existem dois servidores virtuais nos quais estão alojados a aplicação e base de dados, respectivamente.
+18. Há servidores virtuais do ISEP onde deverão estar alojadas a aplicação, base de dados e front end, respectivamente.
 
 ## Solution Background
 > The sub-parts of this section provide a description of why the architecture is the way that it is, and a convincing argument that the architecture is the right one to satisfy the behavioral and quality attribute goals levied upon it.

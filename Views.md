@@ -1,4 +1,4 @@
-	## Contents
+## Contents
 - [Views](#views)
 	- [Introduction](#introduction)
 	- [Nível 1](#nível-1)
@@ -110,47 +110,15 @@ Uma proposta muito simplificada.
 
 De facto, deve-se ter em consideração os requisitos não funcionais ["Physical Contraints"](Background.md#Physical_Constraints).
 
-## Nível 3 (MDR)
-### Vista Lógica
-Alternativa baseada numa arquitetura por camadas sobrepostas:
-![N3-VL-MDR-alt1](diagramas/nivel3/MDR/N3-VL-MDR-alt1.png)
-
-Alternativa baseada numa arquitetura por camadas concêntricas (Onion):
-![N3-VL-MDR-alt2](diagramas/nivel3/MDR/N3-VL-MDR-alt2.png)
-
-A alternativa Onion será a adotada.
-
-### Vista de Processos
-
-#### SD US01
-TBD
-
-#### (outros SSD arquiteturalmente relevantes)
-[...]
-
-### Vista de Implementação
-![N3-VI-MDR-alt2](diagramas/nivel3/MDR/N3-VI-MDR-alt2.png)
-
-Alguns detalhes mais (se existissem pais do que 4 níveis, podia ser considerado nível 4):
-
-![N3.1-VI-MDR-alt2](diagramas/nivel3/MDR/N3.1-VI-MDR-alt2.png)
-
-### Vista Física
-
-Por agora, não existe necessidade de ser representada.
-
 ## Nível 3 (UI)
 
 ### Vista Lógica
 TBD
 
 ### Vista de Processos
-TBD
+![process-view-UI](diagrams/ProcessView-UI.png)
 
 ### Vista de Implementação
-TBD
-
-### Vista Física
 TBD
 
 
@@ -164,7 +132,7 @@ Foram introduzidos conceitos como os *aggregates* e *value objects* que permitir
 A forma final da aplicação utiliza a arquitetura ***Onion*** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
 O diagrama de classes apresenta-se dividido em 4 camadas, ***infrastructure***, ***interface adapters***, ***use case services*** e ***domain***, sendo a *infrastructure* a mais exterior e o *domain* a mais interior, representado na seguinte imagem.
 
-![logic-view](diagrams/logic-view-backend.png)
+![logic-view](diagrams/LogicView-lvl3.png)
 
 ### Vista de Processos
 
@@ -224,7 +192,7 @@ Para as Account de person, os diferentes tipos de Accounts são criadas com a se
 
 #### US170,171,172,173 - Create **Person**'s Cash, Bank, BankSavings and Credit Accounts
 
-![sd_us17X](diagrams/SD/SD_US170:171:172:173_CreateAccount.png)
+![sd_us17X](diagrams/SD/SD_US170_171_172_173_CreateAccount.png)
 
 Como é a persistência que cria o ID's para as accounts o **diagrama Factory 1**  é utlizado para obter as account quando ainda não foi atribuido ID pela persistência enquanto que o **diagrama Factory 2** é utilizado para obter as accounts quando já lhes foi atribuido o ID.
 
@@ -241,11 +209,11 @@ Como é a persistência que cria o ID's para as accounts o **diagrama Factory 1*
 
 Tal como referido na **vista lógica** a implementação de todas as **user stories** segue uma estrutura concêntrica subdivida em **infrastructure**, **interface adapters**, **use case services** e **domain** com as seguintes dependências.
 
-![class-diagram](diagrams/class-diagram-general.png)
+![class-diagram](diagrams/implementation-diagram.png)
 
 
-## Nível 3 (Persistência)
-### Vista Lógica
+
+### Vista de Persistência
 
 Para conseguir a persistência de dados na aplicação, foi utilizado um modelo em espelho dos objetos de domínio. 
 
@@ -253,42 +221,3 @@ Cada Objeto de Domínio que se pretende guardar em persistência tem um Objeto d
 
 
 ![mirror](https://imgur.com/9Of4KB4.jpg)
-
-### Vista de Processos
-Assim que os Objetos de Domínio forem convertidos para Objetos de Dados JPA (usando _Assemblers_ dedicados ao efeito em classes _Repository_ de domínio), serão adicionados à base de dados usando _interfaces_ de Repositórios CRUD adequados ao seu tipo.
-O repositório CRUD irá adicionar a informação contida nos Objetos de Dados JPA à base de dados, devolvendo uma cópia do objeto idêntica ou, em alguns casos, com um ID gerado automaticamente aquando da adição. Esta sequencia de processos está representada na imagem seguinte, uma secção do SD da US120 - _Create Family Cash Account_:
-
-![repo](https://i.imgur.com/2fHdjOO.png)
-
-### Vista de Implementação
-A adição/recolha de informação à base de dados é da inteira responsabilidade dos RepositóriosJPA (_CRUD Repositories_). Os Objetos de Dados JPA apenas são manipulados por estes repositórios, sendo o único envolvimento por outras classes a sua tradução de/para domínio por parte dos DataDomainAssemblers.
-Não há nenhum contacto com Objetos JPA e classes na camada de Serviço:
-
-![imp](https://i.imgur.com/mZDVBAV.png)
-
-
-
-
-### Vista Física
-A implementação da aplicação usa duas bases de dados diferentes: POSTGRES para produção e H2 para testes. Esta distinção é obtida através de dois ficheiros de propriedades distintos, que são indicados através duma tag _TestPropertySource_:
-
-```java
-@SpringBootApplication
-@TestPropertySource(locations = "classpath:application-test.properties")
-public class
-FFMSpringBootApplication {...}
-```
-
-A base de dados POTSGRES está de momento alojada num servidor Amazon Web Service (AWS) 
-
-```java
-spring.jpa.database=POSTGRESQL
-spring.datasource.platform=postgres
-spring.datasource.url=jdbc:postgresql://ffmapp.c5zejpkmwdl8.eu-west-3.rds.amazonaws.com:5432/ffmapp
-spring.datasource.username=g3
-spring.datasource.password=*********
-spring.jpa.show-sql=true
-spring.jpa.generate-ddl=true
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
-```
