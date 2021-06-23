@@ -58,6 +58,7 @@ Nesta edição do SWitCH; teremos a colaboração de product owners de diversas 
 8. US105 As a family administrator, I want to create a relation between two family members.
 9. US106 As a family administrator, I want to change the relation between two family members.
 10. US110 As a family administrator, I want to get the list of the categories on the family’s category tree.
+
 ~~11. US111 As a family administrator, I want to add a category to the family’s category tree.~~
 11. US111v2 As a family administrator, I want to add a custom category to the family’s category tree "extended" from either external or internal standard categories.
 12. US120 As a family administrator, I want to create a family cash account.
@@ -101,7 +102,7 @@ n/a
 n/a
 
 ##### Design constraints
-6. O sistema deve ser composto por uma aplicação web do tipo Single Page Application (SPA) que permite aos utilizadores autorizados aceder às diferentes funcionalidades da aplicação.
+1. O sistema deve ser composto por uma aplicação web do tipo Single Page Application (SPA) que permite aos utilizadores autorizados aceder às diferentes funcionalidades da aplicação.
 
 7.  Embora não esteja no âmbito atual do projeto, deve ser levado em conta na arquitetura da solução, a extensão futura com módulos exteriores.
 
