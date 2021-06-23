@@ -62,7 +62,7 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ## Nível 1
 ### Vista Lógica
 
-![img.png](Images/img.png)
+![L1_LogicView](diagrams/L1_LogicView.png)
 
 ### Vista de Processos
 #### Criar Objecto
@@ -80,13 +80,13 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ## Nível 2
 ### Vista Lógica
 
-![LogicView_Nível2.png](diagrams/LogicView_Nível2.png)
+![L2_LogicView](diagrams/L2_Vista_Logica.png)
 
 ### Vista de Processos
 
 #### SSD US Criar/Adicionar um recurso
 
-![ProcessView_Nível2_AddOrCreate.png](Process%20View_Nível2_AddOrCreate.png)
+![Nivel2_Vista_Processos_Criar.png](diagrams/L2_ProcessView_Create.png)
 
 
 #### SSD US Obter um recurso
