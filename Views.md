@@ -113,7 +113,7 @@ De facto, deve-se ter em consideração os requisitos não funcionais ["Physical
 ## Nível 3 (UI)
 
 ### Vista Lógica
-TBD
+![logic-view-ui](diagrams/logic-view-ui.png)
 
 ### Vista de Processos
 ![process-view-UI](diagrams/ProcessView-UI.png)
