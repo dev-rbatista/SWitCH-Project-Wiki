@@ -117,7 +117,7 @@ De facto, deve-se ter em consideração os requisitos não funcionais ["Physical
 ![logic-view-ui](diagrams/logic-view-ui.png)
 
 ### Vista de Processos
-![process-view-UI](diagrams/ProcessView-UI.png)
+![process-view-UI](diagrams/ProcessView_frontend_lvl3.png)
 
 ### Vista de Implementação
 TBD
@@ -133,7 +133,7 @@ Foram introduzidos conceitos como os *aggregates* e *value objects* que permitir
 A forma final da aplicação utiliza a arquitetura ***Onion*** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
 O diagrama de classes apresenta-se dividido em 4 camadas, ***infrastructure***, ***interface adapters***, ***use case services*** e ***domain***, sendo a *infrastructure* a mais exterior e o *domain* a mais interior, representado na seguinte imagem.
 
-![logic-view](diagrams/LogicView-lvl3.png)
+![logic-view](diagrams/LogicView_backend_lvl3.png)
 
 ### Vista de Processos
 
@@ -210,8 +210,11 @@ Como é a persistência que cria o ID's para as accounts o **diagrama Factory 1*
 
 Tal como referido na **vista lógica** a implementação de todas as **user stories** segue uma estrutura concêntrica subdivida em **infrastructure**, **interface adapters**, **use case services** e **domain** com as seguintes dependências.
 
-![class-diagram](diagrams/implementation-diagram.png)
+![class-diagram](diagrams/ImplementationView_Backend_lvl3.png)
 
+Relativamente às implementações dos repositórios podemos entrar em mais detalhe através do seguinte diagrama.
+
+![class-diagram](diagrams/ImplementationView_Backend_lvl4.png)
 
 
 ### Vista de Persistência
