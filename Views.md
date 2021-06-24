@@ -62,7 +62,7 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ## Nível 1
 ### Vista Lógica
 
-![img.png](Images/img.png)
+![L1_LogicView](diagrams/L1_LogicView.png)
 
 ### Vista de Processos
 #### Criar Objecto
@@ -80,22 +80,23 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 ## Nível 2
 ### Vista Lógica
 
-![LogicView_Nível2.png](diagrams/LogicView_Nível2.png)
+![L2_LogicView](diagrams/L2_Vista_Logica.png)
 
 ### Vista de Processos
 
 #### SSD US Criar/Adicionar um recurso
 
-![ProcessView_Nível2_AddOrCreate.png](Process%20View_Nível2_AddOrCreate.png)
+![Nivel2_Vista_Processos_Criar.png](diagrams/L2_LogicView_Create.png)
 
 
 #### SSD US Obter um recurso
+![Nivel2_Vista_Processos_Get.png](diagrams/L2_LogicView_Get.png)
 
-![ProcessView_Nível2_Get.png](diagrams/ProcessView_Nível2_Get.png)
 
 #### SSD US Obter um recurso com API Externa (Standard Categories)
 
-![ProcessView_Nível2_Get_External.png](diagrams/ProcessView_Nível2_Get_External.png)
+
+![Nivel2_Vista_Processos_GetExternal.png](diagrams/L2_LogicView_Get_External.png)
 
 
 
@@ -113,10 +114,10 @@ De facto, deve-se ter em consideração os requisitos não funcionais ["Physical
 ## Nível 3 (UI)
 
 ### Vista Lógica
-TBD
+![logic-view-ui](diagrams/logic-view-ui.png)
 
 ### Vista de Processos
-![process-view-UI](diagrams/ProcessView-UI.png)
+![process-view-UI](diagrams/ProcessView_frontend_lvl3.png)
 
 ### Vista de Implementação
 TBD
@@ -132,7 +133,7 @@ Foram introduzidos conceitos como os *aggregates* e *value objects* que permitir
 A forma final da aplicação utiliza a arquitetura ***Onion*** que é representada por uma divisão em camadas concêntricas cujas dependências têm um sentido interno.
 O diagrama de classes apresenta-se dividido em 4 camadas, ***infrastructure***, ***interface adapters***, ***use case services*** e ***domain***, sendo a *infrastructure* a mais exterior e o *domain* a mais interior, representado na seguinte imagem.
 
-![logic-view](diagrams/LogicView-lvl3.png)
+![logic-view](diagrams/LogicView_backend_lvl3.png)
 
 ### Vista de Processos
 
@@ -209,8 +210,11 @@ Como é a persistência que cria o ID's para as accounts o **diagrama Factory 1*
 
 Tal como referido na **vista lógica** a implementação de todas as **user stories** segue uma estrutura concêntrica subdivida em **infrastructure**, **interface adapters**, **use case services** e **domain** com as seguintes dependências.
 
-![class-diagram](diagrams/implementation-diagram.png)
+![class-diagram](diagrams/ImplementationView_Backend_lvl3.png)
 
+Relativamente às implementações dos repositórios podemos entrar em mais detalhe através do seguinte diagrama.
+
+![class-diagram](diagrams/ImplementationView_Backend_lvl4.png)
 
 
 ### Vista de Persistência
