@@ -86,16 +86,17 @@ Para modelar/representar visualmente, tanto o que foi implementado como as ideia
 
 #### SSD US Criar/Adicionar um recurso
 
-![Nivel2_Vista_Processos_Criar.png](diagrams/L2_ProcessView_Create.png)
+![Nivel2_Vista_Processos_Criar.png](diagrams/L2_LogicView_Create.png)
 
 
 #### SSD US Obter um recurso
+![Nivel2_Vista_Processos_Get.png](diagrams/L2_LogicView_Get.png)
 
-![ProcessView_Nível2_Get.png](diagrams/ProcessView_Nível2_Get.png)
 
 #### SSD US Obter um recurso com API Externa (Standard Categories)
 
-![ProcessView_Nível2_Get_External.png](diagrams/ProcessView_Nível2_Get_External.png)
+
+![Nivel2_Vista_Processos_GetExternal.png](diagrams/L2_LogicView_Get_External.png)
 
 
 
