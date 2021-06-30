@@ -52,7 +52,7 @@ Nesta edição do SWitCH; teremos a colaboração de product owners de diversas 
 2. US002 As a system manager, I want to get the standard categories tree.
 3. US003 As a system manager, I want that the list of standard categories to include those loaded (whenever needed) from a complementary system defined by configuration.
 4. US010 As a system manager, I want to create a family and set the family administrator.
-5 US080 As a system user, I want to login into the application in order to use it.
+5. US080 As a system user, I want to login into the application in order to use it.
 6. US101 As a family administrator, I want to add family members.
 7. US104 As a family administrator, I want to get the list of family members and their relations.
 8. US105 As a family administrator, I want to create a relation between two family members.
